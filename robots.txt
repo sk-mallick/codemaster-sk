@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codemastersk.dev/sitemap.xml

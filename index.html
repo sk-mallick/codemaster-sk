@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en-IN" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-src 'self' https: about:blank; base-uri 'self'; form-action 'self' https://formsubmit.co;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://formsubmit.co">
+<script>document.documentElement.className = document.documentElement.className.replace('no-js', '') + ' js';</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeMaster SK — Build. Design. Grow.</title>
+<meta name="description" content="CodeMaster SK is a digital solutions studio building websites, custom web applications, UI/UX and AI-powered systems for startups, local businesses, schools and founders.">
+<link rel="canonical" href="https://codemastersk.dev/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="CodeMaster SK — Build. Design. Grow.">
+<meta property="og:description" content="A digital solutions studio building websites, custom web applications, UI/UX and AI-powered systems for startups, local businesses, schools and founders.">
+<meta property="og:url" content="https://codemastersk.dev/">
+<meta property="og:image" content="https://codemastersk.dev/og-cover.png">
+<meta property="og:site_name" content="CodeMaster SK">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CodeMaster SK — Build. Design. Grow.">
+<meta name="twitter:description" content="Websites, web applications, UI/UX and AI solutions for startups, schools and local businesses.">
+<meta name="twitter:image" content="https://codemastersk.dev/og-cover.png">
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0a0e17">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CodeMaster SK",
+  "url": "https://codemastersk.dev/",
+  "description": "Digital solutions studio building websites, custom web applications, UI/UX and AI-powered systems.",
+  "founder": {
+    "@type": "Person",
+    "name": "Subham Kumar Mallick"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/subham-kumar-mallick",
+    "https://github.com/sk-mallick",
+    "https://sk-coder-001.netlify.app",
+    "https://instagram.com/codemastersk"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "CodeMaster SK",
+  "image": "https://codemastersk.dev/og-cover.png",
+  "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bhubaneswar",
+    "addressRegion": "Odisha",
+    "addressCountry": "IN"
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- Third-Party Scripts (Deferred) -->
+<script src="assets/js/lucide.min.js" defer></script>
+<script src="assets/js/gsap.min.js" defer></script>
+<script src="assets/js/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/lenis.min.js" defer></script>
+</head>
+<body>
+
+<div class="loader" id="pageLoader" aria-hidden="true">
+  <span class="loader-mark">
+    <span class="dot"></span>CodeMaster<span class="accent">SK</span>
+  </span>
+</div>
+
+<div class="vh" id="routeAnnouncer" role="status" aria-live="polite"></div>
+
+<noscript>
+  <div style="background: var(--amber); color: #1a1300; padding: 12px; text-align: center; font-weight: 600; font-size: 0.9rem; position: relative; z-index: 1000; font-family: sans-serif;">
+    JavaScript is disabled. Some interactive features and live previews may not load.
+  </div>
+</noscript>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+
+<div class="bg-fixed">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="wrap nav-row">
+      <a href="#/" data-route="home" class="logo"><span class="dot"></span>CodeMaster<span class="accent">SK</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#/" data-route="home">Home</a>
+        <a href="#/services" data-route="services">Services</a>
+        <a href="#/portfolio" data-route="portfolio">Portfolio</a>
+        <a href="#/pricing" data-route="pricing">Pricing</a>
+        <a href="#/process" data-route="process">Process</a>
+        <a href="#/contact" data-route="contact">Contact</a>
+      </div>
+      <a href="#/contact" data-route="contact" class="nav-cta">Get Free Consultation</a>
+      <button class="burger" id="burgerBtn" type="button" aria-label="Toggle menu" aria-controls="mobilePanel" aria-expanded="false"><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+    <a href="#/" data-route="home">Home</a>
+    <a href="#/services" data-route="services">Services</a>
+    <a href="#/portfolio" data-route="portfolio">Portfolio</a>
+    <a href="#/pricing" data-route="pricing">Pricing</a>
+    <a href="#/process" data-route="process">Process</a>
+    <a href="#/contact" data-route="contact">Contact</a>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<main id="main">
+<section id="home" class="page">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">&lt;Studio/&gt;</span>
+        <h1 class="hero-animate hero-animate-1">We Build Websites That Help Businesses <span class="grad-text">Grow.</span></h1>
+        <p class="lead hero-animate hero-animate-2">Helping startups, local businesses, educational institutions, and founders build modern websites, digital systems, and AI-powered solutions that deliver real business value.</p>
+        <div class="hero-ctas hero-animate hero-animate-3">
+          <a href="#/contact" data-route="contact" class="btn btn-primary">Get a Free Consultation</a>
+          <a href="#/portfolio" data-route="portfolio" class="btn btn-ghost">View Our Work</a>
+        </div>
+      </div>
+      <div class="reveal hero-animate hero-animate-4" id="heroTerminalWrap">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+            <span class="fname">studio.js</span>
+          </div>
+          <div class="terminal-body" id="terminalBody"></div>
+        </div>
+        <div class="industries-strip">
+          <span class="label">// industries we build for</span>
+          <div class="pill-row">
+            <span class="pill">Education</span>
+            <span class="pill">Construction</span>
+            <span class="pill">Healthcare</span>
+            <span class="pill">Beauty</span>
+            <span class="pill">Real Estate</span>
+            <span class="pill">Restaurants</span>
+            <span class="pill">Startups</span>
+            <span class="pill">NGOs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-strip reveal">
+    <div class="wrap stats-row">
+      <div class="sp-item"><span class="sp-stars stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></span></div>
+      <div class="sp-item"><span class="sp-num counter" data-target="20">0</span><span class="sp-lbl">Projects completed</span></div>
+      <div class="sp-item"><span class="sp-num counter" data-target="15">0</span><span class="sp-lbl">Happy clients</span></div>
+      <div class="sp-item"><span class="sp-num counter" data-target="2">0</span><span class="sp-lbl">Years experience</span></div>
+      <div class="sp-item"><span class="sp-num">24h</span><span class="sp-lbl">Response time</span></div>
+    </div>
+  </div>
+
+  <div class="logo-wall-section reveal">
+    <div class="wrap">
+      <div class="logo-wall-row">
+        <span class="logo-wall-label mono">// Trusted by</span>
+      </div>
+    </div>
+    <div class="logo-wall marquee" style="--marquee-dur:28s;">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="logo-chip">RN Design & Construction</span>
+          <span class="logo-chip">Purvaansh Preschool</span>
+          <span class="logo-chip">ENGLISHJIBI CLASSES</span>
+          <span class="logo-chip">Trident ACM Student Chapter</span>
+          <span class="logo-chip">Suni Makeover Academy & Salon</span>
+          <span class="logo-chip">Spark Fitness</span>
+          <span class="logo-chip">Anwesha Construction</span>
+          <span class="logo-chip">Mountain Association</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="logo-chip">RN Design & Construction</span>
+          <span class="logo-chip">Purvaansh Preschool</span>
+          <span class="logo-chip">ENGLISHJIBI CLASSES</span>
+          <span class="logo-chip">Trident ACM Student Chapter</span>
+          <span class="logo-chip">Suni Makeover Academy & Salon</span>
+          <span class="logo-chip">Spark Fitness</span>
+          <span class="logo-chip">Anwesha Construction</span>
+          <span class="logo-chip">Mountain Association</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section-alt">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <span class="quote-mark">“</span>
+        <h3>Not a freelancer portfolio. A digital solutions studio.</h3>
+        <p>CodeMaster SK is a digital solutions studio focused on designing modern websites, business systems, and digital experiences that help organizations grow online — from a five-page landing site to a fully custom student portal.</p>
+        <p>Every project moves through the same disciplined process: understand the business first, then design and build the system that fits it — clean code, secure by default, and built to last past launch day.</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-grid">
+          <div class="stat-card"><span class="num">5</span><span class="lbl">Core service lines</span></div>
+          <div class="stat-card"><span class="num">9</span><span class="lbl">Industries served</span></div>
+          <div class="stat-card"><span class="num">12+</span><span class="lbl">Technologies in the stack</span></div>
+          <div class="stat-card"><span class="num">∞</span><span class="lbl">Lifetime support & guidance</span></div>
+        </div>
+        <div class="about-cta-box">
+          <div class="acb-content">
+            <h4>Let's build something exceptional.</h4>
+            <p>From initial scope to production deployment, we handle the full product life cycle.</p>
+          </div>
+          <a href="#/contact" data-route="contact" class="acb-link" aria-label="Book a free consultation"><i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;WhyUs/&gt;</span>
+        <h2>Why businesses choose CodeMaster SK</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal"><div class="chk"><i data-lucide="check"></i></div><h4>Fast Delivery</h4><p>Structured sprints so your site ships on the timeline you were quoted.</p></div>
+        <div class="why-card reveal"><div class="chk"><i data-lucide="check"></i></div><h4>Mobile Responsive</h4><p>Designed mobile-first, tested across real devices, not just a browser resize.</p></div>
+        <div class="why-card reveal"><div class="chk"><i data-lucide="check"></i></div><h4>SEO Friendly</h4><p>Clean semantic markup and fast load times so search engines can find you.</p></div>
+        <div class="why-card reveal"><div class="chk"><i data-lucide="check"></i></div><h4>Modern UI</h4><p>Interfaces built with today's design language, not last decade's templates.</p></div>
+        <div class="why-card reveal"><div class="chk"><i data-lucide="check"></i></div><h4>Affordable Pricing</h4><p>Transparent tiers that scale with what your business actually needs.</p></div>
+        <div class="why-card reveal"><div class="chk"><i data-lucide="check"></i></div><h4>Lifetime Support</h4><p>Ongoing guidance after launch — not a one-time handoff.</p></div>
+        <div class="why-card reveal"><div class="chk"><i data-lucide="check"></i></div><h4>Clean Code</h4><p>Readable, documented, maintainable — built for whoever touches it next.</p></div>
+        <div class="why-card reveal"><div class="chk"><i data-lucide="check"></i></div><h4>Secure Development</h4><p>Authentication, data handling, and deployment done the right way.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="logo-wall-section reveal">
+    <div class="wrap">
+      <div class="logo-wall-row">
+        <span class="logo-wall-label mono">// Our stack</span>
+      </div>
+    </div>
+    <div class="logo-wall marquee reverse" style="--marquee-dur:32s;">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="logo-chip"><i data-lucide="atom"></i> React</span>
+          <span class="logo-chip"><i data-lucide="triangle"></i> Next.js</span>
+          <span class="logo-chip"><i data-lucide="hexagon"></i> Node.js</span>
+          <span class="logo-chip"><i data-lucide="code-2"></i> PHP</span>
+          <span class="logo-chip"><i data-lucide="database"></i> MySQL</span>
+          <span class="logo-chip"><i data-lucide="wind"></i> Tailwind</span>
+          <span class="logo-chip"><i data-lucide="terminal"></i> Python</span>
+          <span class="logo-chip"><i data-lucide="flame"></i> Firebase</span>
+          <span class="logo-chip"><i data-lucide="figma"></i> Figma</span>
+          <span class="logo-chip"><i data-lucide="braces"></i> TypeScript</span>
+        </div>
+        <div class="marquee-group" aria-hidden="true">
+          <span class="logo-chip"><i data-lucide="atom"></i> React</span>
+          <span class="logo-chip"><i data-lucide="triangle"></i> Next.js</span>
+          <span class="logo-chip"><i data-lucide="hexagon"></i> Node.js</span>
+          <span class="logo-chip"><i data-lucide="code-2"></i> PHP</span>
+          <span class="logo-chip"><i data-lucide="database"></i> MySQL</span>
+          <span class="logo-chip"><i data-lucide="wind"></i> Tailwind</span>
+          <span class="logo-chip"><i data-lucide="terminal"></i> Python</span>
+          <span class="logo-chip"><i data-lucide="flame"></i> Firebase</span>
+          <span class="logo-chip"><i data-lucide="figma"></i> Figma</span>
+          <span class="logo-chip"><i data-lucide="braces"></i> TypeScript</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section-founder">
+    <div class="wrap">
+      <div class="section-head section-head-founder reveal">
+        <span class="eyebrow">&lt;Founder/&gt;</span>
+        <h2>The person behind the code</h2>
+      </div>
+      <div class="founder-block reveal">
+        <div class="founder-photo">
+          <img src="assets/img/sk-portrait.png" alt="Subham Kumar Mallick" loading="lazy">
+        </div>
+        <div>
+          <div class="founder-header">
+            <div>
+              <span class="founder-role mono">// Founder & Full-Stack Developer</span>
+              <h3 class="founder-name">Subham Kumar Mallick</h3>
+            </div>
+            <div class="founder-links">
+              <a href="https://sk-coder-001.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="Founder Portfolio Website"><i data-lucide="compass"></i> Portfolio</a>
+              <a href="https://github.com/sk-mallick" target="_blank" rel="noopener noreferrer" aria-label="Subham Kumar Mallick GitHub Profile"><i data-lucide="github"></i> GitHub</a>
+              <a href="https://www.linkedin.com/in/subham-kumar-mallick" target="_blank" rel="noopener noreferrer" aria-label="Subham Kumar Mallick LinkedIn Profile"><i data-lucide="linkedin"></i> LinkedIn</a>
+            </div>
+          </div>
+          <p>I started CodeMaster SK to bring proper software engineering discipline to websites that small businesses, schools, and founders usually get stuck buying as generic templates. I'm currently a B.Tech Computer Science student and Technology Manager at EnglishJibi Classes, building everything from student portals to AI-assisted content pipelines.</p>
+          <p>Outside client work, I compete in hackathons — leading Team Code Hive as a finalist at Trithon and leading a team through Smart India Hackathon 2024 — and I care a lot about interfaces that feel intentional, not templated.</p>
+          <div class="founder-skills">
+            <span>React & Next.js</span><span>PHP / MySQL</span><span>UI/UX Design</span><span>Python</span><span>AI Integration</span><span>System Architecture</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;Proof/&gt;</span>
+        <h2>We don't just say it — we prove it</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card reveal"><div class="tr-icn"><i data-lucide="star"></i></div><div><h4>Google Reviews</h4><p>5-star average across client reviews</p></div></div>
+        <div class="trust-card reveal"><div class="tr-icn"><i data-lucide="quote"></i></div><div><h4>Client Testimonials</h4><p>Verified feedback with names & roles</p></div></div>
+        <div class="trust-card reveal"><div class="tr-icn"><i data-lucide="linkedin"></i></div><div><h4>LinkedIn Recommendations</h4><p>Endorsed by past collaborators</p></div></div>
+        <div class="trust-card reveal"><div class="tr-icn"><i data-lucide="github"></i></div><div><h4>GitHub Activity</h4><p>Public commit history & open code</p></div></div>
+        <div class="trust-card reveal"><div class="tr-icn"><i data-lucide="clock"></i></div><div><h4>2+ Years Experience</h4><p>Building production software since 2024</p></div></div>
+        <div class="trust-card reveal"><div class="tr-icn"><i data-lucide="badge-check"></i></div><div><h4>Certifications</h4><p>Verified coursework & hackathon credentials</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div class="cta-circle cta-circle-1" aria-hidden="true"></div>
+        <div class="cta-circle cta-circle-2" aria-hidden="true"></div>
+        <div class="cta-circle cta-circle-3" aria-hidden="true"></div>
+        <div class="cta-circle cta-circle-4" aria-hidden="true"></div>
+        <div class="cta-content" style="position: relative; z-index: 1;">
+          <span class="eyebrow d-flex" style="justify-content:center;">&lt;NextStep/&gt;</span>
+          <h2>Have a project in mind?</h2>
+          <p>Tell us what you're building — we'll map out the right service tier and timeline for it.</p>
+          <a href="#/contact" data-route="contact" class="btn btn-primary">Book a Free Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="page">
+  <section class="section pt-hero">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;Services/&gt;</span>
+        <h2>What we build</h2>
+        <p>Five service lines, one team — from a five-page business site to a full custom platform.</p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card reveal">
+          <span class="tag-num mono">01</span>
+          <div class="icn"><i data-lucide="globe"></i></div>
+          <h3>Business Websites</h3>
+          <p class="desc">Modern, responsive websites for organizations that need a strong first impression online.</p>
+          <div class="taglist">
+            <span>Corporate</span><span>Construction</span><span>Hotels</span><span>Schools</span>
+            <span>Coaching Centers</span><span>Clinics</span><span>Restaurants</span><span>Startups</span>
+          </div>
+          <div class="svc-meta">
+            <div><span class="sm-k">// Timeline</span><span class="sm-v">7–15 days</span></div>
+            <div><span class="sm-k">// Starts from</span><span class="sm-v">₹5,000</span></div>
+            <div><span class="sm-k">// Process</span><span class="sm-v">Discovery → Design → Build → Launch</span></div>
+            <div><span class="sm-k">// Deliverables</span><span class="sm-v">Responsive site, SEO setup, source files</span></div>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="tag-num mono">02</span>
+          <div class="icn"><i data-lucide="layout-panel-left"></i></div>
+          <h3>Custom Web Applications</h3>
+          <p class="desc">Purpose-built systems for the day-to-day operations that a template can't handle.</p>
+          <div class="taglist">
+            <span>Student Portals</span><span>Teacher Dashboards</span><span>Management Systems</span>
+            <span>Admin Panels</span><span>Attendance Systems</span><span>Inventory</span><span>CRM</span>
+          </div>
+          <div class="svc-meta">
+            <div><span class="sm-k">// Timeline</span><span class="sm-v">3–6 weeks</span></div>
+            <div><span class="sm-k">// Starts from</span><span class="sm-v">₹20,000</span></div>
+            <div><span class="sm-k">// Process</span><span class="sm-v">Scope → Architecture → Build → QA → Deploy</span></div>
+            <div><span class="sm-k">// Deliverables</span><span class="sm-v">Full app, admin panel, documentation</span></div>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="tag-num mono">03</span>
+          <div class="icn"><i data-lucide="palette"></i></div>
+          <h3>UI/UX Design</h3>
+          <p class="desc">Interfaces designed around how people actually use them — in Figma, before a line of code is written.</p>
+          <div class="taglist">
+            <span>Landing Pages</span><span>Dashboard Design</span><span>Mobile UI</span>
+            <span>Website Redesign</span><span>Figma Design</span>
+          </div>
+          <div class="svc-meta">
+            <div><span class="sm-k">// Timeline</span><span class="sm-v">5–10 days</span></div>
+            <div><span class="sm-k">// Starts from</span><span class="sm-v">₹3,500</span></div>
+            <div><span class="sm-k">// Process</span><span class="sm-v">Research → Wireframe → Hi-fi → Handoff</span></div>
+            <div><span class="sm-k">// Deliverables</span><span class="sm-v">Figma files, design system, prototype</span></div>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <span class="tag-num mono">04</span>
+          <div class="icn"><i data-lucide="bot"></i></div>
+          <h3>AI Solutions</h3>
+          <p class="desc">Practical automation and AI features that remove manual work from the business, not gimmicks bolted on.</p>
+          <div class="taglist">
+            <span>AI Chatbots</span><span>Business Automation</span><span>AI Workflow Systems</span>
+            <span>Prompt Engineering</span><span>AI Integration</span>
+          </div>
+          <div class="svc-meta">
+            <div><span class="sm-k">// Timeline</span><span class="sm-v">1–3 weeks</span></div>
+            <div><span class="sm-k">// Starts from</span><span class="sm-v">₹8,000</span></div>
+            <div><span class="sm-k">// Process</span><span class="sm-v">Use-case → Prompt design → Integrate → Test</span></div>
+            <div><span class="sm-k">// Deliverables</span><span class="sm-v">Working integration, prompt docs</span></div>
+          </div>
+        </div>
+        <div class="service-card reveal" style="grid-column:1 / -1;">
+          <span class="tag-num mono">05</span>
+          <div class="icn"><i data-lucide="tag"></i></div>
+          <h3>Branding</h3>
+          <p class="desc">The visual identity that ties the website back to the business — consistent across every surface.</p>
+          <div class="taglist">
+            <span>Logo</span><span>Social Media Posts</span><span>Project Presentation</span><span>Business Profiles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;Industries/&gt;</span>
+        <h2>Industries we work with</h2>
+      </div>
+      <div class="industries-grid reveal">
+        <span class="industry-chip">Education</span>
+        <span class="industry-chip">Construction</span>
+        <span class="industry-chip">Healthcare</span>
+        <span class="industry-chip">Beauty</span>
+        <span class="industry-chip">Real Estate</span>
+        <span class="industry-chip">Restaurants</span>
+        <span class="industry-chip">Startups</span>
+        <span class="industry-chip">NGOs</span>
+        <span class="industry-chip">Professional Services</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;Included/&gt;</span>
+        <h2>What every website ships with</h2>
+      </div>
+      <div class="feature-grid reveal">
+        <div class="feature-chip"><span class="fc-dot"></span>SEO Basics</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Analytics</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Fully Responsive</div>
+        <div class="feature-chip"><span class="fc-dot"></span>SSL Security</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Performance Tuning</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Accessibility</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Hardened Security</div>
+        <div class="feature-chip"><span class="fc-dot"></span>WhatsApp Integration</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Admin Panel</div>
+        <div class="feature-chip"><span class="fc-dot"></span>CMS Options</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Smart Forms</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Email Setup</div>
+        <div class="feature-chip"><span class="fc-dot"></span>Micro-animations</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;WhyUs/&gt;</span>
+        <h2>Why CodeMaster SK, not a template</h2>
+      </div>
+      <div class="table-wrapper reveal">
+        <table class="compare-table">
+          <thead>
+            <tr><th></th><th>Templates / Others</th><th>CodeMaster SK</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Design</td><td class="them">Reused templates</td><td class="us">Fully custom</td></tr>
+            <tr><td>Speed</td><td class="them">Often bloated & slow</td><td class="us">Optimized & fast</td></tr>
+            <tr><td>Support</td><td class="them">No support after handoff</td><td class="us">Lifetime support</td></tr>
+            <tr><td>UI Quality</td><td class="them">Average, generic</td><td class="us">Premium, intentional</td></tr>
+            <tr><td>Ownership</td><td class="them">Locked to a platform</td><td class="us">You own the code</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section id="portfolio" class="page">
+  <section class="section pt-hero">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;Portfolio/&gt;</span>
+        <h2>Selected work</h2>
+        <p>Nine real projects, each a full case study — the problem, the build, and the result. Click any card to open it.</p>
+      </div>
+
+      <div class="project-grid" id="projectGrid"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ CASE STUDY (dynamic) ============ -->
+<section id="case" class="page">
+  <section class="section case-hero">
+    <div class="wrap">
+      <button type="button" class="back-link mt-0" data-route="portfolio" data-back><i data-lucide="arrow-left" aria-hidden="true"></i> Back to portfolio</button>
+      <div style="margin-top:22px;">
+        <span class="cs-eyebrow mono" id="csEyebrow">// Case Study</span>
+        <h1 id="csTitle">Project Title</h1>
+        <div class="cs-meta-row" id="csMetaRow"></div>
+        <div class="cs-cta-row">
+          <a href="#" id="csLiveBtn" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Website</a>
+          <a href="#" id="csGithubBtn" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">GitHub</a>
+          <a href="#/contact" data-route="contact" class="btn btn-ghost">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="device-switch reveal">
+        <button type="button" data-device="desktop" class="active"><i class="dev-ic" data-lucide="monitor"></i> Desktop</button>
+        <button type="button" data-device="tablet"><i class="dev-ic" data-lucide="tablet"></i> Tablet</button>
+        <button type="button" data-device="mobile"><i class="dev-ic" data-lucide="smartphone"></i> Mobile</button>
+      </div>
+      <div class="live-preview-frame reveal" id="livePreviewFrame">
+        <div class="lp-bar">
+          <span class="tdot" style="background:#ff5f57;"></span><span class="tdot" style="background:#febc2e;"></span><span class="tdot" style="background:#28c840;"></span>
+          <span class="lp-url mono" id="csLiveUrlLabel">https://example.com</span>
+        </div>
+        <div class="iframe-overlay" id="iframeOverlay" style="display:none;">
+          <p id="iframeOverlayMessage">A live preview is not available for this project yet.</p>
+          <div id="iframeConsentActions" style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+            <a href="#" id="csLiveBtnDirect" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 18px;font-size:0.82rem;">Open Live Website Directly <i data-lucide="external-link"></i></a>
+          </div>
+        </div>
+        <button type="button" class="lp-overlay" id="lpOverlay" style="display:none;" aria-label="Enable live preview interaction">
+          <span class="btn btn-ghost" style="background: rgba(10,14,23,0.85); border-color: var(--border); pointer-events: none; display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; padding: 10px 18px;">
+            <i data-lucide="mouse-pointer" style="width: 14px; height: 14px;"></i> Click to Interact
+          </span>
+        </button>
+        <iframe id="csIframe" src="" loading="lazy" title="Live website preview" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-forms allow-storage-access-by-user-activation" allow="fullscreen"></iframe>
+        <button type="button" class="lp-exit-btn" id="lpExitBtn" aria-label="Exit interactive preview">Exit Preview</button>
+      </div>
+      <p class="live-preview-note">Some sites restrict embedding for security — if the preview appears blank, use "Live Website" above to open it directly.</p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Overview/&gt;</span><h2>Project overview</h2></div>
+      <div class="cs-overview-grid reveal" id="csOverviewGrid"></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Problem/&gt;</span><h2>The problem</h2></div>
+      <p class="reveal" id="csProblem" style="max-width:720px;font-size:1rem;"></p>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Solution/&gt;</span><h2>What we built</h2></div>
+      <p class="reveal" id="csSolutionIntro" style="max-width:720px;font-size:1rem;margin-bottom:20px;"></p>
+      <div class="cs-feature-grid reveal" id="csFeatureGrid"></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Stack/&gt;</span><h2>Technology used</h2></div>
+      <div class="cs-tech-grid reveal" id="csTechGrid"></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Process/&gt;</span><h2>Development process</h2></div>
+      <div class="process-track reveal" id="csProcessTrack"></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Challenges/&gt;</span><h2>Challenges & how we solved them</h2></div>
+      <div class="cs-chain reveal" id="csChallengeChain"></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Results/&gt;</span><h2>Results</h2></div>
+      <div class="cs-results-grid reveal" id="csResultsGrid"></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Gallery/&gt;</span><h2>UI gallery</h2></div>
+      <div class="cs-gallery-grid reveal" id="csGalleryGrid"></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="section-head reveal"><span class="eyebrow">&lt;Review/&gt;</span><h2>Client review</h2></div>
+      <div class="cs-review-card reveal" id="csReviewCard"></div>
+    </div>
+  </section>
+
+  <section class="cs-section">
+    <div class="wrap">
+      <div class="prev-next-row reveal">
+        <button type="button" class="pn-card prev" id="csPrevCard"><span class="pn-lbl"><i data-lucide="arrow-left"></i> Previous project</span><h4 id="csPrevTitle"></h4></button>
+        <button type="button" class="pn-card next" id="csNextCard"><span class="pn-lbl">Next project <i data-lucide="arrow-right"></i></span><h4 id="csNextTitle"></h4></button>
+      </div>
+    </div>
+  </section>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbLabel" aria-hidden="true">
+  <div class="lb-box"><button type="button" class="lb-close" id="lbClose" aria-label="Close preview"><i data-lucide="x"></i></button><span id="lbLabel">Gallery preview</span></div>
+</div>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" class="page">
+  <section class="section pt-hero">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;Pricing/&gt;</span>
+        <h2>Straightforward pricing</h2>
+        <p>Three tiers, scoped to what most businesses actually need. Final quotes depend on scope.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <span class="p-name mono">Starter Website</span>
+          <div class="p-range">₹5,000 – ₹10,000</div>
+          <div class="p-for">Small businesses, landing pages, portfolio sites</div>
+          <ul class="p-list">
+            <li><span class="ck"><i data-lucide="check"></i></span> Responsive design</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> 5 pages</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Contact form</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Basic SEO</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> WhatsApp integration</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Google Maps</li>
+          </ul>
+          <div class="p-delivery">Delivery: 5–7 days · 2 revisions · 30-day support</div>
+          <p style="font-size:.78rem;color:var(--text-faint);margin-bottom:14px;">Not included: hosting, domain, GST (billed separately)</p>
+          <a href="#/contact" data-route="contact" class="btn btn-ghost" style="justify-content:center;">Get Started</a>
+        </div>
+
+        <div class="price-card popular reveal">
+          <span class="p-name mono">Business Website</span>
+          <div class="p-range">₹10,000 – ₹20,000</div>
+          <div class="p-for">Growing businesses, schools, construction, clinics, restaurants</div>
+          <ul class="p-list">
+            <li><span class="ck"><i data-lucide="check"></i></span> 10–15 pages</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> CMS</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Admin panel</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Advanced forms</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Animations</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> SEO setup</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Performance optimization</li>
+          </ul>
+          <div class="p-delivery">Delivery: 10–15 days · 4 revisions · 90-day support</div>
+          <p style="font-size:.78rem;color:var(--text-faint);margin-bottom:14px;">Not included: hosting, domain, GST (billed separately)</p>
+          <a href="#/contact" data-route="contact" class="btn btn-primary" style="justify-content:center;">Get Started</a>
+        </div>
+
+        <div class="price-card reveal">
+          <span class="p-name mono">Custom Web Application</span>
+          <div class="p-range">₹20,000 – ₹30,000+</div>
+          <div class="p-for">Management systems, student portals, business dashboards, custom software</div>
+          <ul class="p-list">
+            <li><span class="ck"><i data-lucide="check"></i></span> Authentication</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Dashboard</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Database</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Reports</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Admin panel</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Role management</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> API integration</li>
+            <li><span class="ck"><i data-lucide="check"></i></span> Documentation & deployment</li>
+          </ul>
+          <div class="p-delivery">Delivery: scoped per project · Revisions per SOW · Lifetime support</div>
+          <p style="font-size:.78rem;color:var(--text-faint);margin-bottom:14px;">Not included: hosting, domain, GST (billed separately)</p>
+          <a href="#/contact" data-route="contact" class="btn btn-ghost" style="justify-content:center;">Get Started</a>
+        </div>
+      </div>
+
+      <div class="info-badges reveal">
+        <div class="info-badge"><span class="ib-k">// Payment</span><span class="ib-v">50% advance · 50% on delivery</span></div>
+        <div class="info-badge"><span class="ib-k">// Hosting</span><span class="ib-v">Setup available on request</span></div>
+        <div class="info-badge"><span class="ib-k">// Domain</span><span class="ib-v">Purchased separately, we assist</span></div>
+        <div class="info-badge"><span class="ib-k">// GST</span><span class="ib-v">Billed extra where applicable</span></div>
+        <div class="info-badge"><span class="ib-k">// Maintenance</span><span class="ib-v">Optional monthly plans available</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;Reviews/&gt;</span>
+        <h2>What clients say</h2>
+      </div>
+      <div class="testi-slider reveal" id="testiSlider" role="region" aria-roledescription="carousel" aria-label="Customer Reviews" tabindex="0">
+        <div class="testi-track-wrap">
+          <div class="testi-track" id="testiTrack">
+            <div class="testi-slide" id="testi-slide-1" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <div class="testi-card">
+                <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <p class="quote">"Delivered exactly what we asked for, and explained every step so we understood what we were paying for."</p>
+                <div class="who"><div class="avatar"></div><div><div class="nm">Business Owner</div><div class="rl">Local Services</div></div></div>
+              </div>
+            </div>
+            <div class="testi-slide" id="testi-slide-2" role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <div class="testi-card">
+                <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <p class="quote">"Our admin panel now does in minutes what used to take a full afternoon of spreadsheet work."</p>
+                <div class="who"><div class="avatar"></div><div><div class="nm">Program Coordinator</div><div class="rl">Education</div></div></div>
+              </div>
+            </div>
+            <div class="testi-slide" id="testi-slide-3" role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <div class="testi-card">
+                <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                <p class="quote">"Fast turnaround and the site still gets compliments months after launch."</p>
+                <div class="who"><div class="avatar"></div><div><div class="nm">Studio Owner</div><div class="rl">Beauty & Wellness</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-dots" id="testiDots" role="tablist" aria-label="Testimonial navigation"></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="page">
+  <section class="section pt-hero">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;Process/&gt;</span>
+        <h2>How a project moves</h2>
+        <p>Every engagement — from a starter site to a custom platform — follows the same seven-stage path.</p>
+      </div>
+      <div class="process-track">
+        <div class="proc-step reveal"><div class="pnum">01</div><h4>Discovery</h4><p>Understand the business & goals</p></div>
+        <div class="proc-step reveal"><div class="pnum">02</div><h4>Planning</h4><p>Scope, sitemap, timeline</p></div>
+        <div class="proc-step reveal"><div class="pnum">03</div><h4>UI/UX</h4><p>Wireframes & visual design</p></div>
+        <div class="proc-step reveal"><div class="pnum">04</div><h4>Development</h4><p>Build the real thing</p></div>
+        <div class="proc-step reveal"><div class="pnum">05</div><h4>Testing</h4><p>QA across devices</p></div>
+        <div class="proc-step reveal"><div class="pnum">06</div><h4>Launch</h4><p>Deploy to production</p></div>
+        <div class="proc-step reveal"><div class="pnum">07</div><h4>Support</h4><p>Ongoing guidance</p></div>
+      </div>
+
+      <div class="stack-grid">
+        <div class="stack-col reveal">
+          <span class="stack-title mono">// Frontend</span>
+          <ul><li>HTML / CSS / JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li></ul>
+        </div>
+        <div class="stack-col reveal">
+          <span class="stack-title mono">// Backend</span>
+          <ul><li>PHP</li><li>Node.js</li><li>Java</li><li>Python</li></ul>
+        </div>
+        <div class="stack-col reveal">
+          <span class="stack-title mono">// Databases</span>
+          <ul><li>MySQL</li><li>MongoDB</li><li>Firebase</li><li>PostgreSQL</li></ul>
+        </div>
+        <div class="stack-col reveal">
+          <span class="stack-title mono">// Tools & Deploy</span>
+          <ul><li>Git & GitHub</li><li>Docker</li><li>Figma</li><li>Cloudflare / Netlify / Vercel</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="page">
+  <section class="section pt-hero">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">&lt;Contact/&gt;</span>
+        <h2>Let's build something.</h2>
+        <p style="margin-top:16px;font-size:1.02rem;">Tell us a bit about the project — we'll follow up within a day with scope and next steps.</p>
+
+        <form id="contactForm" data-endpoint="hello@codemastersk.dev" method="POST" style="margin-top:32px;" novalidate>
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New Project Inquiry — CodeMaster SK">
+          
+          <div class="hp-field" aria-hidden="true">
+            <label for="cf-company">Company</label>
+            <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-field" id="cf-name-field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Your name" autocomplete="name" aria-describedby="cf-name-error" required>
+            <span class="field-err" id="cf-name-error">Please enter your name.</span>
+          </div>
+          <div class="form-field" id="cf-email-field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" placeholder="you@business.com" autocomplete="email" aria-describedby="cf-email-error" required>
+            <span class="field-err" id="cf-email-error">Please enter a valid email address.</span>
+          </div>
+          <div class="form-field">
+            <label for="cf-type">Project type</label>
+            <select id="cf-type" name="project_type">
+              <option value="Starter Website">Starter Website</option>
+              <option value="Business Website">Business Website</option>
+              <option value="Custom Web Application">Custom Web Application</option>
+              <option value="UI/UX Design">UI/UX Design</option>
+              <option value="AI Solutions">AI Solutions</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-field" id="cf-msg-field">
+            <label for="cf-msg">Project details</label>
+            <textarea id="cf-msg" name="message" placeholder="What are you trying to build?" aria-describedby="cf-msg-error" required></textarea>
+            <span class="field-err" id="cf-msg-error">Tell us a bit about the project.</span>
+          </div>
+          <button type="submit" class="btn btn-primary" id="cfSubmit" style="width:100%;justify-content:center;">Send Message</button>
+          <p class="form-note" id="formNote" role="status">Thanks — your message is noted. We'll reach out within 24 hours.</p>
+        </form>
+      </div>
+
+      <div class="reveal">
+        <span class="eyebrow">&lt;Reach/&gt;</span>
+        <h2 style="font-size:1.6rem;">Reach us directly</h2>
+        <div class="contact-links">
+          <a data-email="hello@codemastersk.dev" class="contact-link-row" aria-label="Send us an email"><div class="cl-icn"><i data-lucide="mail"></i></div><div class="cl-txt"><span class="k">Email</span><span class="v" data-email-txt="hello@codemastersk.dev">[Email Obfuscated]</span></div></a>
+          <a data-wa="OTE4MjYwNzQyMTk1" target="_blank" rel="noopener noreferrer" class="contact-link-row" aria-label="Chat with us on WhatsApp"><div class="cl-icn"><i data-lucide="message-circle"></i></div><div class="cl-txt"><span class="k">WhatsApp</span><span class="v">Chat with us</span></div></a>
+          <a href="https://www.linkedin.com/in/subham-kumar-mallick" target="_blank" rel="noopener noreferrer" class="contact-link-row" aria-label="Connect with Subham Kumar Mallick on LinkedIn"><div class="cl-icn"><i data-lucide="linkedin"></i></div><div class="cl-txt"><span class="k">LinkedIn</span><span class="v">CodeMaster SK</span></div></a>
+          <a href="https://instagram.com/codemastersk" target="_blank" rel="noopener noreferrer" class="contact-link-row" aria-label="Follow CodeMaster SK on Instagram"><div class="cl-icn"><i data-lucide="instagram"></i></div><div class="cl-txt"><span class="k">Instagram</span><span class="v">@codemastersk</span></div></a>
+          <a href="https://github.com/sk-mallick" target="_blank" rel="noopener noreferrer" class="contact-link-row" aria-label="Explore Subham Kumar Mallick projects on GitHub"><div class="cl-icn"><i data-lucide="github"></i></div><div class="cl-txt"><span class="k">GitHub</span><span class="v">Open-source & project code</span></div></a>
+        </div>
+        <div class="info-badges">
+          <div class="info-badge"><span class="ib-k">// Business Hours</span><span class="ib-v">Mon–Sat, 10 AM – 7 PM IST</span></div>
+          <div class="info-badge"><span class="ib-k">// Response Time</span><span class="ib-v">Within 24 hours</span></div>
+          <div class="info-badge"><span class="ib-k">// Location</span><span class="ib-v">Bhubaneswar, Odisha</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">&lt;FAQ/&gt;</span>
+        <h2>Frequently asked</h2>
+      </div>
+      <div id="faqList" class="reveal">
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-1" aria-expanded="false" aria-controls="faq-ans-1">How much does a website cost?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+            <div class="faq-a-inner">
+              <p>It depends on scope — starter sites begin around ₹5,000, business sites ₹10,000–₹20,000, and custom applications from ₹20,000 upward. We'll quote exactly once we know what you need.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">How long does development take?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+            <div class="faq-a-inner">
+              <p>Starter sites ship in 5–7 days, business sites in 10–15 days. Custom applications are scoped individually based on complexity.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">Do you provide hosting?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+            <div class="faq-a-inner">
+              <p>We can set up and configure hosting on platforms like Vercel, Netlify, or Cloudflare, and hand over full access — or work with hosting you already have.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">Do you redesign websites?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+            <div class="faq-a-inner">
+              <p>Yes — redesigns of existing websites are part of our UI/UX service line, whether that's a visual refresh or a full rebuild.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">Do you maintain websites after launch?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+            <div class="faq-a-inner">
+              <p>Every project includes lifetime support and guidance — we stay reachable for fixes, small updates, and questions after handoff. Ongoing monthly maintenance plans are also available.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-6" aria-expanded="false" aria-controls="faq-ans-6">Who owns the website once it's built?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+            <div class="faq-a-inner">
+              <p>You do. You get full source code, admin access, and hosting/domain access — nothing is locked to us.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-7" aria-expanded="false" aria-controls="faq-ans-7">How many revisions are included?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
+            <div class="faq-a-inner">
+              <p>Starter sites include 2 rounds, business sites 4 rounds, and custom applications follow the revision count agreed in the SOW. Extra rounds can be added if needed.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-8" aria-expanded="false" aria-controls="faq-ans-8">Do I need to arrange SEO separately?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-8" role="region" aria-labelledby="faq-btn-8">
+            <div class="faq-a-inner">
+              <p>Basic on-page SEO (titles, meta tags, sitemap, structured data) is included in every tier. Ongoing SEO campaigns are a separate add-on.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-9" aria-expanded="false" aria-controls="faq-ans-9">Do you handle domain registration?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-9" role="region" aria-labelledby="faq-btn-9">
+            <div class="faq-a-inner">
+              <p>Domains are purchased and owned by you, but we're happy to guide you through registration and DNS setup at no extra charge.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-10" aria-expanded="false" aria-controls="faq-ans-10">Is GST included in the price?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-10" role="region" aria-labelledby="faq-btn-10">
+            <div class="faq-a-inner">
+              <p>Listed prices are before applicable taxes. GST, where applicable, is added to the final invoice.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-11" aria-expanded="false" aria-controls="faq-ans-11">How does payment work?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-11" role="region" aria-labelledby="faq-btn-11">
+            <div class="faq-a-inner">
+              <p>Most projects follow a 50% advance and 50% on-delivery structure. Larger custom applications can be split into milestone-based payments.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-12" aria-expanded="false" aria-controls="faq-ans-12">Can you set up email addresses for my domain?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-12" role="region" aria-labelledby="faq-btn-12">
+            <div class="faq-a-inner">
+              <p>Yes, we can configure professional email (e.g. via Google Workspace or Zoho Mail) as part of setup.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-13" aria-expanded="false" aria-controls="faq-ans-13">Do you sign an NDA or contract?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-13" role="region" aria-labelledby="faq-btn-13">
+            <div class="faq-a-inner">
+              <p>Yes — every project starts with a simple agreement covering scope, timeline, payment terms, and confidentiality.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" id="faq-btn-14" aria-expanded="false" aria-controls="faq-ans-14">What if I need changes after the support period ends?<span class="fplus">+</span></button>
+          <div class="faq-a" id="faq-ans-14" role="region" aria-labelledby="faq-btn-14">
+            <div class="faq-a-inner">
+              <p>You can request paid support on-demand, or move to one of our monthly maintenance plans for ongoing coverage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ PRIVACY POLICY ============ -->
+<section id="privacy" class="page">
+  <section class="section pt-hero">
+    <div class="wrap" style="max-width:800px;">
+      <div class="reveal">
+        <span class="eyebrow">&lt;Legal/&gt;</span>
+        <h1>Privacy Policy</h1>
+        <p style="margin-top:14px;color:var(--text-faint);font-size:.9rem;">Last Updated: July 2026</p>
+        
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:24px;line-height:1.7;">
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">1. Information We Collect</h3>
+            <p>We collect personal information that you provide to us directly, such as your name, email address, and project details when you fill out our contact form or subscribe to our newsletter.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">2. How We Use Your Information</h3>
+            <p>We use the collected information to respond to your inquiries, provide custom digital solutions, and send newsletter updates if subscribed. We do not sell or share your data with third parties.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">3. Cookies & Tracking</h3>
+            <p>Our website is a static portfolio and does not use tracking cookies. Live project previews are loaded directly from client websites for interactive demonstration.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">4. Contact Us</h3>
+            <p>If you have questions about this policy, contact us at <a data-email="hello@codemastersk.dev" data-email-txt="hello@codemastersk.dev" class="text-teal text-underline">[Email Obfuscated]</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ TERMS OF SERVICE ============ -->
+<section id="terms" class="page">
+  <section class="section pt-hero">
+    <div class="wrap" style="max-width:800px;">
+      <div class="reveal">
+        <span class="eyebrow">&lt;Legal/&gt;</span>
+        <h1>Terms of Service</h1>
+        <p style="margin-top:14px;color:var(--text-faint);font-size:.9rem;">Last Updated: July 2026</p>
+        
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:24px;line-height:1.7;">
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">1. Project Terms</h3>
+            <p>All project scopes, timelines, deliverables, and payments are governed by individual Service Agreements or Statements of Work signed before work begins.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">2. Client Responsibilities</h3>
+            <p>Clients must provide timely feedback, assets, and approvals to maintain agreed project schedules. Delayed feedback may impact delivery timelines.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">3. Ownership & Source Code</h3>
+            <p>Upon final payment, full ownership of custom source code, designs, and assets is transferred to the client. CodeMaster SK retains the right to display the work in its portfolio unless an NDA is signed.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">4. Governing Law</h3>
+            <p>These terms are governed by the laws of India, under the jurisdiction of courts in Bhubaneswar, Odisha.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ============ REFUND POLICY ============ -->
+<section id="refunds" class="page">
+  <section class="section pt-hero">
+    <div class="wrap" style="max-width:800px;">
+      <div class="reveal">
+        <span class="eyebrow">&lt;Legal/&gt;</span>
+        <h1>Refund Policy</h1>
+        <p style="margin-top:14px;color:var(--text-faint);font-size:.9rem;">Last Updated: July 2026</p>
+        
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:24px;line-height:1.7;">
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">1. Deposit Payments</h3>
+            <p>The initial 50% deposit (or agreed booking fee) is non-refundable once work has officially commenced, as it allocates design and development resources to your project.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">2. Project Cancellation</h3>
+            <p>If a project is cancelled mid-way, clients will be invoiced for hours worked or milestones completed up to the date of cancellation. Any work completed will be handed over upon payment of the balance.</p>
+          </div>
+          <div>
+            <h3 style="font-size:1.2rem;color:var(--text);margin-bottom:8px;">3. Delivered Work</h3>
+            <p>Once final deliverables are approved and shipped, no refunds will be issued. We provide a support period to fix any issues, and ongoing maintenance is covered under support terms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="notfound" class="page">
+  <div class="wrap page-404">
+    <span class="code-404 mono">404</span>
+    <h1>This page doesn't exist.</h1>
+    <p style="margin-top:14px;max-width:480px;">The link you followed may be broken, or the page may have moved. Let's get you back on track.</p>
+    <a href="#/" data-route="home" class="btn btn-primary" style="margin-top:26px;">Back to home</a>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="fbrand">
+        <a href="#/" data-route="home" class="logo"><span class="dot"></span>CodeMaster<span class="accent">SK</span></a>
+        <p>A digital solutions studio building websites, custom applications, and AI-powered systems for startups, local businesses, schools, and founders.</p>
+        <div class="footer-contact">
+          <span><i data-lucide="map-pin"></i> Bhubaneswar, Odisha, India</span>
+          <span><i data-lucide="mail"></i> <span data-email-txt="hello@codemastersk.dev">hello@codemastersk.dev</span></span>
+        </div>
+        <form class="newsletter-row" data-endpoint="hello@codemastersk.dev" method="POST" id="newsletterForm">
+          <input type="hidden" name="_subject" value="New Newsletter Subscription — CodeMaster SK">
+          <input type="email" name="email" placeholder="Your email" aria-label="Newsletter email" autocomplete="email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="form-note" id="newsletterNote" role="status"></p>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#/services" data-route="services">Services</a></li>
+          <li><a href="#/portfolio" data-route="portfolio">Portfolio</a></li>
+          <li><a href="#/pricing" data-route="pricing">Pricing</a></li>
+          <li><a href="#/contact" data-route="contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#/services" data-route="services">Business Websites</a></li>
+          <li><a href="#/services" data-route="services">Web Applications</a></li>
+          <li><a href="#/services" data-route="services">UI/UX Design</a></li>
+          <li><a href="#/services" data-route="services">AI Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#/privacy" data-route="privacy">Privacy Policy</a></li>
+          <li><a href="#/terms" data-route="terms">Terms of Service</a></li>
+          <li><a href="#/refunds" data-route="refunds">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> CodeMaster SK. All rights reserved.</span>
+        <div class="flinks">
+          <a href="https://www.linkedin.com/in/subham-kumar-mallick" target="_blank" rel="noopener noreferrer" aria-label="Subham Kumar Mallick LinkedIn Profile">LinkedIn</a><a href="https://instagram.com/codemastersk" target="_blank" rel="noopener noreferrer" aria-label="CodeMaster SK Instagram Profile">Instagram</a><a href="https://github.com/sk-mallick" target="_blank" rel="noopener noreferrer" aria-label="Subham Kumar Mallick GitHub Profile">GitHub</a>
+        </div>
+      </div>
+  </div>
+</footer>
+
+<button type="button" class="back-to-top" id="backToTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+<a data-wa="OTE4MjYwNzQyMTk1" target="_blank" rel="noopener noreferrer" class="float-whatsapp" aria-label="Chat with us on WhatsApp"><i data-lucide="message-circle"></i></a>
+
+
+
+<!-- ============ MODULAR APPLICATION SCRIPTS ============ -->
+<script src="assets/js/projects.js" defer></script>
+<script src="assets/js/router.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
