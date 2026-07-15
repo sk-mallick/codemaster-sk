@@ -843,8 +843,9 @@ i, [data-lucide] { color: inherit; }
 .section-founder { padding-bottom: var(--space-12); }
 .section-head-founder { margin-bottom: 28px; }
 .founder-photo {
-  width: 100%; height: 100%; border-radius: var(--radius-xl); background: var(--bg-alt);
+  width: 100%; aspect-ratio: 4/5; height: auto; border-radius: var(--radius-xl); background: var(--bg-alt);
   border: 1px solid var(--border); position: relative; overflow: hidden;
+  align-self: start;
 }
 .founder-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block;
