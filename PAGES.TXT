@@ -1,0 +1,12 @@
+| Project Name                                 | Category                                        | Live Demo                                                                                              |
+| -------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Personal Portfolio**                       | Personal Portfolio Website                      | [https://sk-coder-001.netlify.app](https://sk-coder-001.netlify.app)                                   |
+| **RN Design & Construction (RNDC)**          | Construction & Corporate Website                | [https://sk-mallick.github.io/RNDC.in/](https://sk-mallick.github.io/RNDC.in/)                         |
+| **Purvaansh Preschool**                      | Preschool & Educational Website                 | [https://sk-mallick.github.io/Purvaansh-Preschool/](https://sk-mallick.github.io/Purvaansh-Preschool/) |
+| **Trident ACM Student Chapter**              | College Student Chapter Website                 | [https://adityanarayandas.github.io/acm/](https://adityanarayandas.github.io/acm/)                     |
+| **Sunita Makeover Academy & Salon**          | Salon & Academy Business Website                | [https://sk-mallick.github.io/sunitamakeover/](https://sk-mallick.github.io/sunitamakeover/)           |
+| **ENGLISHJIBI CLASSES**                      | Coaching Institute Website                      | [https://sk-mallick.github.io/englishjibi-classes/](https://sk-mallick.github.io/englishjibi-classes/) |
+| **ENGLISHJIBI Digital Learning Portal**      | Student Learning Platform                       | [https://sk-mallick-englishjibi.page.gd/](https://sk-mallick-englishjibi.page.gd/)                     |
+| **ENGLISHJIBI Fee Management System (MCMS)** | Fee Collection & Management System              | [https://sk-mallick-englishjibi-fees.page.gd/](https://sk-mallick-englishjibi-fees.page.gd/)           |
+| **ENGLISHJIBI Digital Question Bank**        | Interactive Question Bank & Assessment Platform | [https://sk-mallick.github.io/ALL-SETS/](https://sk-mallick.github.io/ALL-SETS/)                       |
+| **Anwesha Constructions**                    | Construction & Corporate Website                | [https://sk-mallick.github.io/anwesh-contraction/](https://sk-mallick.github.io/anwesh-contraction/)   |

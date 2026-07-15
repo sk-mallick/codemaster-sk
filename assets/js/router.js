@@ -59,6 +59,10 @@
     safe(function() {
       document.title = title;
       if (baseDesc && desc) baseDesc.setAttribute('content', desc);
+      const canonicalLink = document.querySelector('link[rel="canonical"]');
+      if (canonicalLink && window.SITE_CONFIG) {
+        canonicalLink.setAttribute('href', window.SITE_CONFIG.canonicalBase + window.location.hash);
+      }
     });
   }
 
@@ -192,7 +196,9 @@
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('[data-route]').forEach(function(a) {
       const routeName = a.getAttribute('data-route');
-      a.setAttribute('href', routeUrl(routeName));
+      if (a.tagName === 'A') {
+        a.setAttribute('href', routeUrl(routeName));
+      }
       a.style.cursor = 'pointer';
       a.addEventListener('click', function(e) {
         if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;

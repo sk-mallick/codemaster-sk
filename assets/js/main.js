@@ -76,7 +76,7 @@
     if (!wrap || !track || !dotsEl) return;
     const slides = Array.prototype.slice.call(track.children);
     let idx = 0, autoplayTimer = null;
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduced = prefersReducedMotionGlobal;
 
     slides.forEach(function(slide, i) {
       const b = document.createElement('button');
@@ -193,7 +193,7 @@
         '<div class="pc-visual">' + window.escapeHtml(p.type) + '</div>' +
         '<div class="pc-body">' +
           '<span class="pc-tag mono">// ' + window.escapeHtml(p.tag) + '</span>' +
-          '<h4>' + window.escapeHtml(p.title) + '</h4>' +
+          '<h3>' + window.escapeHtml(p.title) + '</h3>' +
           '<p>' + window.escapeHtml(p.subtitle) + '</p>' +
           '<div class="pc-cta"><span>View case study</span><span class="arrow"><i data-lucide="arrow-right"></i></span></div>' +
         '</div>';
@@ -307,7 +307,7 @@
     }).join('');
 
     document.getElementById('csProcessTrack').innerHTML = processSteps.map(function(s) {
-      return '<div class="proc-step"><div class="pnum">' + window.escapeHtml(s.n) + '</div><h4>' + window.escapeHtml(s.t) + '</h4></div>';
+      return '<div class="proc-step"><div class="pnum">' + window.escapeHtml(s.n) + '</div><h3>' + window.escapeHtml(s.t) + '</h3></div>';
     }).join('');
 
     document.getElementById('csChallengeChain').innerHTML = p.challenges.map(function(c, i) {
@@ -426,9 +426,28 @@
   const lightbox = document.getElementById('lightbox');
   const lightboxClose = document.getElementById('lbClose');
   let lastLightboxTrigger = null;
+  let activeGalleryItem = null;
   function openLightbox(label, trigger) {
     lastLightboxTrigger = trigger || document.activeElement;
-    document.getElementById('lbLabel').textContent = label || 'Gallery preview';
+    activeGalleryItem = trigger && trigger.classList.contains('cs-gallery-item') ? trigger : null;
+    const lbLabel = document.getElementById('lbLabel');
+    if (lbLabel) lbLabel.textContent = label || 'Gallery preview';
+    
+    const lbImage = document.getElementById('lbImage');
+    if (lbImage) {
+      const currentProj = window.projects[window.currentActiveProjectIdx];
+      if (currentProj) {
+        const projSlug = window.slugify(currentProj.title);
+        const itemSlug = window.slugify(label);
+        lbImage.src = 'assets/img/projects/' + projSlug + '-' + itemSlug + '.png';
+        lbImage.alt = currentProj.title + ' — ' + label;
+        lbImage.onerror = function() {
+          lbImage.style.display = 'none';
+        };
+        lbImage.style.display = 'block';
+      }
+    }
+    
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
     if (lightboxClose) lightboxClose.focus();
@@ -436,6 +455,9 @@
   function closeLightbox() {
     lightbox.classList.remove('open');
     lightbox.setAttribute('aria-hidden', 'true');
+    activeGalleryItem = null;
+    const lbImage = document.getElementById('lbImage');
+    if (lbImage) lbImage.src = '';
     if (lastLightboxTrigger && typeof lastLightboxTrigger.focus === 'function') lastLightboxTrigger.focus();
   }
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
@@ -446,6 +468,25 @@
     if (!lightbox || !lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') {
       closeLightbox();
+    } else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      if (activeGalleryItem) {
+        const items = Array.from(document.querySelectorAll('.cs-gallery-item'));
+        if (items.length > 1) {
+          let idx = items.indexOf(activeGalleryItem);
+          if (idx !== -1) {
+            if (e.key === 'ArrowRight') {
+              idx = (idx + 1) % items.length;
+            } else {
+              idx = (idx - 1 + items.length) % items.length;
+            }
+            const nextItem = items[idx];
+            if (nextItem) {
+              openLightbox(nextItem.getAttribute('data-label'), nextItem);
+              e.preventDefault();
+            }
+          }
+        }
+      }
     } else if (e.key === 'Tab') {
       const focusables = lightbox.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
       if (focusables.length > 0) {
@@ -612,6 +653,7 @@
     const nameEl = document.getElementById('cf-name');
     const emailEl = document.getElementById('cf-email');
     const msgEl = document.getElementById('cf-msg');
+    if (!nameEl || !emailEl || !msgEl) return;
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim());
     const nameOk = nameEl.value.trim().length > 0;
     const msgOk = msgEl.value.trim().length > 0;
@@ -847,6 +889,15 @@
   // ---------- NEWSLETTER ----------
   const newsletterForm = document.getElementById('newsletterForm');
   const newsletterNote = document.getElementById('newsletterNote');
+  function showToast(message) {
+    const toast = document.getElementById('newsletterToast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(function() {
+      toast.classList.remove('show');
+    }, 4000);
+  }
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -865,6 +916,7 @@
         .then(function() {
           btn.textContent = 'Subscribed ✓';
           input.value = '';
+          showToast('Thanks — you are subscribed to our newsletter.');
           if (newsletterNote) {
             newsletterNote.textContent = 'Thanks — you are subscribed.';
             newsletterNote.classList.remove('is-error');
@@ -924,6 +976,17 @@
 
   // Hydrate Obfuscated links
   document.addEventListener('DOMContentLoaded', function() {
+    // Prevent default on disabled buttons/links (e.g. href="#")
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('a, button');
+      if (target && (target.classList.contains('is-disabled') || target.getAttribute('aria-disabled') === 'true' || target.disabled)) {
+        if (target.getAttribute('href') === '#') {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }
+    }, true);
+
     updateNavHeight();
     buildProjectGrid();
     resolveInitialRoute();
