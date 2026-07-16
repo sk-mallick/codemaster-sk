@@ -434,17 +434,31 @@
     if (lbLabel) lbLabel.textContent = label || 'Gallery preview';
     
     const lbImage = document.getElementById('lbImage');
+    const lbPlaceholder = document.getElementById('lbPlaceholder');
     if (lbImage) {
       const currentProj = window.projects[window.currentActiveProjectIdx];
       if (currentProj) {
         const projSlug = window.slugify(currentProj.title);
         const itemSlug = window.slugify(label);
-        lbImage.src = 'assets/img/projects/' + projSlug + '-' + itemSlug + '.png';
-        lbImage.alt = currentProj.title + ' — ' + label;
+        
+        lbImage.onload = function() {
+          lbImage.style.display = 'block';
+          if (lbPlaceholder) lbPlaceholder.style.display = 'none';
+        };
+        
         lbImage.onerror = function() {
           lbImage.style.display = 'none';
+          if (lbPlaceholder) {
+            lbPlaceholder.style.display = 'flex';
+            const plTitle = document.getElementById('lbPlaceholderTitle');
+            const plScreen = document.getElementById('lbPlaceholderScreen');
+            if (plTitle) plTitle.textContent = currentProj.title;
+            if (plScreen) plScreen.textContent = '// Screen: ' + label;
+          }
         };
-        lbImage.style.display = 'block';
+
+        lbImage.src = 'assets/img/projects/' + projSlug + '-' + itemSlug + '.png';
+        lbImage.alt = currentProj.title + ' — ' + label;
       }
     }
     
@@ -457,7 +471,9 @@
     lightbox.setAttribute('aria-hidden', 'true');
     activeGalleryItem = null;
     const lbImage = document.getElementById('lbImage');
+    const lbPlaceholder = document.getElementById('lbPlaceholder');
     if (lbImage) lbImage.src = '';
+    if (lbPlaceholder) lbPlaceholder.style.display = 'none';
     if (lastLightboxTrigger && typeof lastLightboxTrigger.focus === 'function') lastLightboxTrigger.focus();
   }
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
