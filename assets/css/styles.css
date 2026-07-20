@@ -28,6 +28,7 @@
   --terminal-prompt: #8a99ad;    /* WCAG AA Compliant (>4.5:1 on bg-alt) */
   
   --violet: var(--violet-base);
+  --violet-text: #7c6eea;        /* WCAG AA Compliant (>4.5:1 on bg-alt); use for violet on small/regular-weight text */
   --teal: var(--teal-base);
   --amber: var(--amber-base);
   --error: var(--error-base);
@@ -453,7 +454,7 @@ i, [data-lucide] { color: inherit; }
 .terminal-body .ln { color: var(--text-dim); white-space: pre-wrap; word-break: break-word; }
 
 /* Real terminal syntax highlights styling */
-.terminal-body .ln .kw { color: var(--violet); }
+.terminal-body .ln .kw { color: var(--violet-text); }
 .terminal-body .ln .str { color: var(--teal); }
 .terminal-body .ln .fn { color: var(--amber); }
 .terminal-body .ok { color: var(--teal); }
@@ -836,13 +837,6 @@ i, [data-lucide] { color: inherit; }
 
 
 
-/* ============ SOCIAL PROOF STRIP ============ */
-.social-proof { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--border); }
-.sp-item { display: flex; align-items: center; gap: 10px; }
-.sp-item .sp-num { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; }
-.sp-item .sp-lbl { font-size: var(--text-xs); color: var(--text-dim); line-height: 1.3; max-width: 110px; }
-.sp-stars { color: var(--amber); letter-spacing: 2px; font-size: var(--text-xs); }
-
 /* ============ LOGO WALL ============ */
 .logo-wall-section {
   padding: 40px 0;
@@ -1044,10 +1038,11 @@ button.project-card {
 /* Accessible button-based back link wrapper */
 .back-link {
   display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-faint);
-  margin-top: 24px; cursor: pointer; border: 0; background: transparent; font-weight: inherit; transition: color .2s;
+  margin: 10px 0 0 -6px; padding: 14px 6px; cursor: pointer; border: 0; background: transparent; font-weight: inherit;
+  border-radius: var(--radius-sm); transition: color .2s, background .2s;
 }
 @media (hover: hover) and (pointer: fine) {
-  .back-link:hover { color: var(--text-dim); }
+  .back-link:hover { color: var(--text-dim); background: var(--surface); }
 }
 
 .device-switch { display: flex; gap: 8px; margin-bottom: 16px; }
@@ -1194,7 +1189,7 @@ button.pn-card { width: 100%; color: var(--text); font: inherit; text-align: lef
   .service-card--featured h3 { font-size: var(--text-xl); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
-  .footer-col ul li a { display: inline-block; padding: 10px 0; }
+  .footer-col ul li a { display: inline-block; padding: 13px 0; }
   .hero { padding: 76px 0 40px; }
   .hero-grid { gap: 28px; }
   .hero-ctas { flex-direction: column; }
@@ -1205,7 +1200,6 @@ button.pn-card { width: 100%; color: var(--text); font: inherit; text-align: lef
   .fc-metrics { grid-template-columns: 1fr; }
   .compare-table { font-size: 0.8rem; }
   .compare-table th, .compare-table td { padding: 10px 12px; }
-  .social-proof { gap: 18px; }
   .project-grid { grid-template-columns: 1fr; }
   .cs-overview-grid { grid-template-columns: 1fr; }
   .cs-feature-grid, .cs-results-grid, .cs-gallery-grid { grid-template-columns: 1fr 1fr; }
@@ -1218,6 +1212,7 @@ button.pn-card { width: 100%; color: var(--text); font: inherit; text-align: lef
   .founder-skills span { font-size: 0.72rem; padding: 4px 9px; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 16px; }
   .footer-bottom .flinks { justify-content: center; }
+  .footer-bottom .flinks a { display: inline-block; padding: 13px 4px; }
 }
 @media (max-width: 480px) {
   .cs-feature-grid, .cs-results-grid, .cs-gallery-grid { grid-template-columns: 1fr; }

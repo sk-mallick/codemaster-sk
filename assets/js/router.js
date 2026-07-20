@@ -55,13 +55,13 @@
 
   function routeUrl(name, slug) { return '#' + routePath(name, slug); }
 
-  function setMeta(title, desc) {
+  function setMeta(title, desc, path) {
     safe(function() {
       document.title = title;
       if (baseDesc && desc) baseDesc.setAttribute('content', desc);
       const canonicalLink = document.querySelector('link[rel="canonical"]');
-      if (canonicalLink && window.SITE_CONFIG) {
-        canonicalLink.setAttribute('href', window.SITE_CONFIG.canonicalBase + window.location.hash);
+      if (canonicalLink && window.SITE_CONFIG && path) {
+        canonicalLink.setAttribute('href', window.SITE_CONFIG.canonicalBase.replace(/\/$/, '') + path);
       }
     });
   }
@@ -150,12 +150,13 @@
   // navigate(name, slug) is the single entry point for every internal nav action
   function navigate(name, slug, opts) {
     opts = opts || {};
+    const path = routePath(name, slug);
     if (name === 'case') {
       const meta = routeMeta[name] || {};
-      setMeta((meta.title || 'Case Study — CodeMaster SK'), meta.desc);
+      setMeta((meta.title || 'Case Study — CodeMaster SK'), meta.desc, path);
     } else {
       const m = routeMeta[name] || routeMeta.notfound;
-      setMeta(m.title, m.desc);
+      setMeta(m.title, m.desc, path);
     }
     if (!opts.skipPush) pushUrl(name, slug);
     showPage(name, opts);

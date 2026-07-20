@@ -218,8 +218,7 @@
     const frame = document.getElementById('livePreviewFrame');
 
     if (frame) {
-      frame.classList.remove('tablet', 'mobile', 'interactive', 'no-preview');
-      if (!liveUrl) frame.classList.add('no-preview');
+      frame.classList.remove('tablet', 'mobile', 'interactive');
     }
     document.querySelectorAll('.device-switch button').forEach(function(b) {
       b.classList.toggle('active', b.getAttribute('data-device') === 'desktop');
@@ -351,8 +350,8 @@
     renderCase(idx);
     const p = window.projects[idx];
     const slug = window.slugify(p.title);
-    document.title = p.title + ' — Case Study — CodeMaster SK';
     if (!opts.skipPush) window.navigate('case', slug, opts);
+    document.title = p.title + ' — Case Study — CodeMaster SK';
     return true;
   };
 
@@ -728,12 +727,6 @@
 
   // ---------- SCROLL PROGRESS & VISUAL HANDLING ----------
   const backToTop = document.getElementById('backToTop');
-  let cachedScrollLimit = 1;
-
-  function updateScrollLimit() {
-    const h = document.documentElement;
-    cachedScrollLimit = (h.scrollHeight - h.clientHeight) || 1;
-  }
 
   function updateScrollVisuals() {
     const currentScrollY = window.scrollY || document.documentElement.scrollTop;
@@ -754,21 +747,10 @@
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
-  window.addEventListener('resize', updateScrollLimit);
-  window.addEventListener('load', function() {
-    updateScrollLimit();
-    updateScrollVisuals();
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    updateScrollLimit();
-    updateScrollVisuals();
-  });
+  window.addEventListener('load', updateScrollVisuals);
+  document.addEventListener('DOMContentLoaded', updateScrollVisuals);
 
-  window.updateProgress = function() {
-    updateScrollLimit();
-    updateScrollVisuals();
-  };
-  updateScrollLimit();
+  window.updateProgress = updateScrollVisuals;
   updateScrollVisuals();
 
   // ---------- ANIMATED NUMBER COUNTERS ----------
