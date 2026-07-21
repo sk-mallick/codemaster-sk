@@ -24,7 +24,11 @@
   // Centralized Configuration for dynamic Domain settings
   window.SITE_CONFIG = {
     domain: 'codemastersk.dev', // Switch easily to 'codemastersk.in'
-    canonicalBase: 'https://codemastersk.dev/'
+    canonicalBase: 'https://codemastersk.dev/',
+    // Google Sheets ("Excel") backend: paste your deployed Apps Script Web App
+    // URL here (…/exec) to log every submission to a spreadsheet. Leave blank
+    // to fall back to FormSubmit email delivery. See SHEETS_BACKEND.md.
+    sheetsEndpoint: ''
   };
 
   function slugify(str) {

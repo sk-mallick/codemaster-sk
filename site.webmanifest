@@ -4,8 +4,8 @@
   "description": "Digital solutions studio building websites, custom web applications, UI/UX and AI-powered systems.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0e17",
-  "theme_color": "#0a0e17",
+  "background_color": "#08080c",
+  "theme_color": "#08080c",
   "icons": [
     {
       "src": "/favicon-16x16.png",

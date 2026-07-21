@@ -68,6 +68,26 @@
     });
   }
 
+  // ---------- THEME TOGGLE (dark <-> light, persisted) ----------
+  (function() {
+    const toggle = document.getElementById('themeToggle');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      if (meta) meta.setAttribute('content', theme === 'light' ? '#f4f3ea' : '#08080c');
+      if (toggle) toggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+    }
+    applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+        try { localStorage.setItem('cmsk-theme', next); } catch (e) {}
+        if (window.ScrollTrigger && typeof ScrollTrigger.refresh === 'function') ScrollTrigger.refresh();
+      });
+    }
+  })();
+
   // ---------- TESTIMONIAL SLIDER ----------
   (function() {
     const wrap = document.querySelector('.testi-track-wrap');
@@ -641,6 +661,35 @@
     return payload;
   }
 
+  // Choose the submission endpoint: the Google Sheets ("Excel") Web App when
+  // configured, otherwise FormSubmit email delivery built from data-endpoint.
+  function endpointFor(formEl) {
+    const sheets = window.SITE_CONFIG && window.SITE_CONFIG.sheetsEndpoint;
+    if (sheets) return { url: sheets, sheets: true };
+    const parts = (formEl.getAttribute('data-endpoint') || '').split('@');
+    return { url: 'https://formsubmit.co/ajax/' + parts[0] + '@' + parts[1], sheets: false };
+  }
+
+  // Unified submit. Google Sheets receives an opaque (no-cors) POST — the row is
+  // written even though the browser can't read the reply, so we resolve
+  // optimistically. FormSubmit returns a readable JSON result via postForm().
+  function submitForm(formEl) {
+    const ep = endpointFor(formEl);
+    const payload = formPayload(formEl);
+    if (ep.sheets) {
+      payload._form = formEl.id || 'form';
+      payload._page = (window.currentPath ? window.currentPath() : location.href);
+      payload._submittedAt = new Date().toISOString();
+      return fetch(ep.url, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).then(function() { return 'ok'; });
+    }
+    return postForm(ep.url, payload);
+  }
+
   function setFieldError(fieldId, hasError) {
     const wrap = document.getElementById(fieldId);
     if (!wrap) return;
@@ -689,9 +738,7 @@
     cfSubmit.classList.add('is-loading');
     cfSubmit.disabled = true;
 
-    const endpointParts = form.getAttribute('data-endpoint').split('@');
-    const submitUrl = 'https://formsubmit.co/ajax/' + endpointParts[0] + '@' + endpointParts[1];
-    postForm(submitUrl, formPayload(form))
+    submitForm(form)
       .then(function() {
         cfSubmit.classList.remove('is-loading');
         cfSubmit.disabled = false;
@@ -703,7 +750,7 @@
       .catch(function() {
         cfSubmit.classList.remove('is-loading');
         cfSubmit.disabled = false;
-        formNote.textContent = "Oops! Something went wrong. Please try again or email hello@codemastersk.dev directly.";
+        formNote.textContent = "Oops! Something went wrong. Please try again or email subhammallick454@gmail.com directly.";
         formNote.classList.add('show', 'is-error');
       });
   });
@@ -908,9 +955,7 @@
       btn.disabled = true;
       if (newsletterNote) newsletterNote.classList.remove('show', 'is-error');
 
-      const endpointParts = newsletterForm.getAttribute('data-endpoint').split('@');
-      const submitUrl = 'https://formsubmit.co/ajax/' + endpointParts[0] + '@' + endpointParts[1];
-      postForm(submitUrl, formPayload(newsletterForm))
+      submitForm(newsletterForm)
         .then(function() {
           btn.textContent = 'Subscribed ✓';
           input.value = '';
