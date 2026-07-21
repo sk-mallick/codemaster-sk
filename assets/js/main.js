@@ -545,7 +545,7 @@
   // ---------- TERMINAL TYPING (WITH SYNTAX HIGHLIGHT REFACTOR) ----------
   const lines = [
     { text: "const codeMasterSK = new DigitalStudio();", cls: "" },
-    { text: 'codeMasterSK.services = ["Web Dev","UI/UX","AI Solutions","Automation"];', cls: "" },
+    { text: 'codeMasterSK.services = ["Web Dev", "UI/UX", "AI", "Apps"];', cls: "" },
     { text: 'codeMasterSK.mission = "Build. Design. Grow.";', cls: "" },
     { text: "codeMasterSK.launch();", cls: "" },
     { text: "✓ Deployed. Business growth: enabled.", cls: "ok" }
