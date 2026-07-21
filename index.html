@@ -30,6 +30,31 @@
 <meta name="twitter:title" content="Code Master SK — Website Designer &amp; Software Company in Bhubaneswar">
 <meta name="twitter:description" content="Code Master SK is a leading website designer and software company in Sailashree Vihar, Bhubaneswar.">
 <meta name="twitter:image" content="https://codemastersk.dev/og-cover.png">
+<script>
+/* Randomize Open Graph Cover Image from assets/img/og-covers/ on page load */
+(function() {
+  try {
+    var covers = [
+      'assets/img/og-covers/og-cover-1.png',
+      'assets/img/og-covers/og-cover-2.png',
+      'assets/img/og-covers/og-cover-3.png',
+      'assets/img/og-covers/og-cover-4.png',
+      'assets/img/og-covers/og-cover-5.png',
+      'og-cover.png'
+    ];
+    var selected = covers[Math.floor(Math.random() * covers.length)];
+    var base = window.location.href.split('#')[0].split('?')[0];
+    if (!base.endsWith('/')) base = base.substring(0, base.lastIndexOf('/') + 1);
+    var fullUrl = base + selected;
+
+    var ogImg = document.querySelector('meta[property="og:image"]');
+    if (ogImg) ogImg.setAttribute('content', fullUrl);
+
+    var twImg = document.querySelector('meta[name="twitter:image"]');
+    if (twImg) twImg.setAttribute('content', fullUrl);
+  } catch(e) {}
+})();
+</script>
 
 <!-- Favicons -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
