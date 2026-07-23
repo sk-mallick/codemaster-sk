@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://codemastersk.dev/sitemap.xml
+Sitemap: https://sk-mallick.github.io/codemaster-sk/sitemap.xml

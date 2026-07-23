@@ -2,25 +2,26 @@
   "name": "CodeMaster SK",
   "short_name": "CodeMaster SK",
   "description": "Digital solutions studio building websites, custom web applications, UI/UX and AI-powered systems.",
-  "start_url": "/",
+  "start_url": "/codemaster-sk/",
   "display": "standalone",
   "background_color": "#08080c",
   "theme_color": "#08080c",
   "icons": [
     {
-      "src": "/favicon-16x16.png",
+      "src": "/codemaster-sk/favicon-16x16.png",
       "sizes": "16x16",
       "type": "image/png"
     },
     {
-      "src": "/favicon-32x32.png",
+      "src": "/codemaster-sk/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/codemaster-sk/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     }
-  ]
+  ],
+  "scope": "/codemaster-sk/"
 }
