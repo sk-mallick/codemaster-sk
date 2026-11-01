@@ -1539,14 +1539,14 @@ body.gating{overflow:hidden}
 .o2{width:40vmax;height:40vmax;background:#ff922e;right:-12vmax;top:18vh;animation-delay:-5s}
 .o3{width:36vmax;height:36vmax;background:#3ddc97;left:22vw;bottom:-22vmax;animation-delay:-9s}
 @keyframes orbm{to{transform:translate(8vmax,6vmax) scale(1.15)}}
-.pcs{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2.2vw,26px);width:min(980px,100%)}
-.pc{--rx:0deg;--ry:0deg;--ty:0px;position:relative;border:1px solid rgba(25,35,60,.1);border-radius:clamp(18px,3vw,30px);background:#fff;box-shadow:0 12px 40px rgba(30,45,80,.09);padding:clamp(8px,2vw,22px) clamp(4px,1vw,10px) clamp(10px,2vw,18px);cursor:pointer;font:inherit;color:#191919;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;transform:perspective(700px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--ty));transition:transform .25s,border-color .25s,box-shadow .3s}
+.pcs{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.5vw,16px);width:min(560px,92vw)}
+.pc{--rx:0deg;--ry:0deg;--ty:0px;position:relative;border:1px solid rgba(25,35,60,.1);border-radius:clamp(14px,1.6vw,20px);background:#fff;box-shadow:0 10px 30px rgba(30,45,80,.08);padding:clamp(12px,1.6vw,16px) clamp(6px,1vw,10px) clamp(10px,1.4vw,14px);cursor:pointer;font:inherit;color:#191919;display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;transform:perspective(700px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(var(--ty));transition:transform .25s,border-color .25s,box-shadow .3s}
 .gate.ready .pc{animation:cardIn 1s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(.14s*var(--i))}
 @keyframes cardIn{from{opacity:0;translate:0 50px;scale:.88}to{opacity:1;translate:0 0;scale:1}}
-.pc:hover,.pc:focus-visible{border-color:var(--c);box-shadow:0 24px 60px color-mix(in srgb,var(--c) 32%,transparent);--ty:-8px;outline:none}
-.pc svg{width:100%;max-width:230px;height:auto;overflow:visible;transition:transform .4s cubic-bezier(.16,1,.3,1)}
-.pc:hover svg,.pc:focus-visible svg{transform:scale(1.07) translateY(-4px)}
-.pc span{font-weight:900;font-size:clamp(.78rem,2.4vw,1.35rem);letter-spacing:-.03em;border-bottom:3px solid var(--c);padding-bottom:2px}
+.pc:hover,.pc:focus-visible{border-color:var(--c);box-shadow:0 16px 36px color-mix(in srgb,var(--c) 28%,transparent);--ty:-6px;outline:none}
+.pc svg{width:100%;max-width:clamp(82px,10vw,115px);height:auto;overflow:visible;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.pc:hover svg,.pc:focus-visible svg{transform:scale(1.06) translateY(-3px)}
+.pc span{font-weight:800;font-size:clamp(.8rem,1.1vw,.96rem);letter-spacing:-.02em;border-bottom:2.5px solid var(--c);padding-bottom:2px}
 .halo{fill:var(--c);opacity:.2;transform-box:fill-box;transform-origin:center;animation:hal 3.4s ease-in-out infinite}
 @keyframes hal{50%{transform:scale(1.09);opacity:.3}}
 .eyes{transform-box:fill-box;transform-origin:center;animation:blk 4.6s infinite}
