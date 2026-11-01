@@ -244,6 +244,141 @@
 
 <style id="portfolio-unified-styles">
 
+/* ---- Digital Profile Card & Share Component ---- */
+.profile-card-section{background:var(--paper);padding:96px 0 80px}
+.card-showcase{display:flex;justify-content:center;margin-top:12px}
+.digital-card{
+ width:min(100%,680px);
+ background:linear-gradient(150deg,#ffffff 0%,#fffef9 60%,#fff7d9 100%);
+ border:2px solid var(--ink);
+ border-radius:28px;
+ padding:32px 36px;
+ box-shadow:12px 14px 0 #191919;
+ position:relative;
+ overflow:hidden;
+ transition:transform .25s ease,box-shadow .25s ease,outline .3s ease;
+}
+.digital-card:hover{
+ transform:translateY(-3px);
+ box-shadow:14px 18px 0 #191919;
+}
+.dcard-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;border-bottom:1px solid #19191914;padding-bottom:18px}
+.dcard-brand{display:flex;align-items:center;gap:12px}
+.dcard-logo{display:grid;place-items:center;width:42px;height:42px;background:var(--ink);color:var(--yellow);border-radius:12px;font-weight:950;font-size:1.1rem;transform:rotate(-4deg)}
+.dcard-brand-info strong{display:block;font-size:1rem;letter-spacing:-.03em;color:var(--ink);line-height:1.15}
+.dcard-brand-info small{display:block;font-size:.7rem;font-weight:750;letter-spacing:.07em;color:var(--orange-dark);text-transform:uppercase}
+.dcard-chip{display:flex;align-items:center;gap:10px}
+.chip-svg{width:38px;height:28px;border-radius:4px;box-shadow:0 2px 6px #00000014}
+.nfc-svg{width:20px;height:20px;color:#a39d8f}
+
+.dcard-body{display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:start;margin-bottom:24px}
+.dcard-avatar-wrap{position:relative;width:120px;aspect-ratio:1/1.15;border-radius:20px;overflow:hidden;border:2px solid var(--ink);background:var(--yellow);box-shadow:4px 5px 0 #19191912}
+.dcard-avatar{width:100%;height:100%;object-fit:cover;display:block}
+.dcard-status{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);background:#ffffffeb;backdrop-filter:blur(8px);border:1px solid #19191918;border-radius:99px;padding:3px 9px;font-size:.68rem;font-weight:800;color:#1f7a48;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+.dcard-status i{width:6px;height:6px;border-radius:50%;background:#269a58;box-shadow:0 0 0 3px #269a5822}
+
+.dcard-details{min-width:0}
+.dcard-title-row{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.dcard-name{font-size:1.45rem;font-weight:900;letter-spacing:-.035em;margin:0;color:var(--ink)}
+.dcard-verified svg{width:18px;height:18px;color:#2f6fed}
+.dcard-role{font-size:.92rem;color:#4a443a;margin:0 0 6px;line-height:1.35}
+.dcard-role strong{color:var(--orange-dark)}
+.dcard-location{display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--muted);margin:0 0 14px}
+.dcard-location svg{width:14px;height:14px;color:var(--orange)}
+
+.dcard-tags{display:flex;flex-wrap:wrap;gap:6px}
+.dcard-tags span{font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:99px;background:var(--soft);border:1px solid #19191912;color:#3b362f}
+
+.dcard-contact-strip{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;border-top:1px solid #19191912;padding-top:18px}
+.dcard-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:12px;background:white;border:1px solid #19191914;font-size:.82rem;font-weight:800;color:var(--ink);transition:transform .2s,background .2s,border-color .2s}
+.dcard-pill:hover{transform:translateY(-2px);border-color:var(--ink);background:var(--soft)}
+.dcard-pill svg{width:15px;height:15px}
+.dcard-pill.wa{background:#25d36618;border-color:#25d36655;color:#0e5d2c}
+.dcard-pill.wa:hover{background:#25d36628;border-color:#25d366}
+
+.dcard-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.dcard-action-btn{font-size:.88rem;min-height:44px;padding:0 16px;width:100%}
+.dcard-action-btn svg{width:17px;height:17px}
+
+.dcard-qr-panel{padding:20px;background:white;border:2px dashed #19191925;border-radius:18px;margin-bottom:20px;display:none;animation:fadeIn .3s ease}
+.dcard-qr-panel.open{display:block}
+.dcard-qr-box{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.dcard-qr-box img{width:170px;height:170px;border-radius:12px;border:1px solid #19191915;padding:8px;background:white}
+.dcard-qr-box p{font-size:.82rem;color:var(--muted);max-width:320px;margin:0}
+
+.dcard-social-share{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid #19191912;padding-top:16px}
+.dcard-share-label{font-size:.76rem;font-weight:800;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.social-share-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:9px;font-size:.78rem;font-weight:750;border:1px solid #19191914;background:white;color:var(--ink);transition:transform .2s}
+.social-share-btn:hover{transform:translateY(-2px)}
+.social-share-btn svg{width:14px;height:14px}
+.social-share-btn.wa{color:#0f6d33;border-color:#25d36640}
+.social-share-btn.li{color:#0a66c2;border-color:#0a66c240}
+.social-share-btn.tw{color:#191919}
+
+/* Share Toast */
+.share-toast{
+ position:fixed;
+ bottom:28px;
+ left:50%;
+ transform:translateX(-50%) translateY(30px);
+ opacity:0;
+ visibility:hidden;
+ background:var(--ink);
+ color:var(--yellow);
+ padding:12px 22px;
+ border-radius:99px;
+ font-size:.88rem;
+ font-weight:850;
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ box-shadow:0 12px 35px #00000030;
+ z-index:9999;
+ transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .3s,visibility .3s;
+ pointer-events:none;
+}
+.share-toast.show{
+ transform:translateX(-50%) translateY(0);
+ opacity:1;
+ visibility:visible;
+}
+.share-toast svg{width:18px;height:18px;color:#3ddc97;flex:none}
+
+/* Nav share button */
+.nav-share-btn{
+ display:inline-flex;
+ align-items:center;
+ gap:6px;
+ padding:7px 14px;
+ border-radius:99px;
+ border:1px solid var(--line);
+ background:transparent;
+ font-size:.82rem;
+ font-weight:800;
+ cursor:pointer;
+ transition:all .2s;
+ color:var(--ink);
+}
+.nav-share-btn:hover{
+ background:var(--ink);
+ color:white;
+ transform:translateY(-2px);
+}
+.nav-share-btn svg{width:15px;height:15px}
+
+@media(max-width:680px){
+ .digital-card{padding:24px 20px;border-radius:22px}
+ .dcard-body{grid-template-columns:1fr;gap:18px;text-align:center}
+ .dcard-avatar-wrap{margin:0 auto;width:105px}
+ .dcard-title-row{justify-content:center}
+ .dcard-location{justify-content:center}
+ .dcard-tags{justify-content:center}
+ .dcard-contact-strip{justify-content:center}
+ .dcard-actions{grid-template-columns:1fr}
+ .dcard-social-share{justify-content:center}
+}
+
+
 /* ---- Code Master SK Studio Section & Branding ---- */
 .brand{display:inline-flex;align-items:center;gap:12px;font-size:1.05rem;font-weight:950;letter-spacing:-.04em;white-space:nowrap}
 .brand-text{display:flex;flex-direction:column;line-height:1.15;text-align:left}
@@ -1521,8 +1656,10 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
    <a href="#work">Projects</a>
    <a href="#pricing">Pricing</a>
    <a href="#reviews">Reviews</a>
+   <a href="#card">Card</a>
    <a href="#contact">Contact</a>
   </div>
+  <button class="nav-share-btn" id="navShareBtn" type="button" aria-label="Share Profile Card"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> <span>Share</span></button>
   <a class="btn btn-dark nav-cta" href="#contact">Start a Project <svg class="ic ic-r" aria-hidden="true" focusable="false"><use href="#ic-right"/></svg></a>
   <button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-label="Open navigation" aria-expanded="false"><i data-lucide="menu"></i></button>
  </nav>
@@ -1746,6 +1883,128 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
  </div>
  <div class="rv-mount" id="rvMount" role="region" aria-roledescription="carousel" aria-label="Client reviews"></div>
 </section>
+
+<section class="section profile-card-section" id="card">
+ <div class="container">
+  <div class="section-head reveal">
+   <div>
+    <p class="eyebrow">Digital Business Card &middot; Code Master SK</p>
+    <h2>Connect &amp; Share in One Tap.</h2>
+   </div>
+   <p>Save my direct contact to your phone, scan my digital card, or share my profile with clients, founders, and hiring teams.</p>
+  </div>
+
+  <div class="card-showcase reveal">
+   <div class="digital-card" id="digitalProfileCard">
+    <div class="dcard-top">
+     <div class="dcard-brand">
+      <span class="dcard-logo">SK</span>
+      <div class="dcard-brand-info">
+       <strong>CODE MASTER SK</strong>
+       <small>Digital Solutions Studio</small>
+      </div>
+     </div>
+     <div class="dcard-chip" aria-hidden="true">
+      <svg viewBox="0 0 48 36" fill="none" class="chip-svg"><rect width="48" height="36" rx="6" fill="#ffd166"/><path d="M0 12h48M0 24h48M16 12v24M32 12v24" stroke="#d49b14" stroke-width="1.8"/><circle cx="24" cy="18" r="5" fill="#f4b01e"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nfc-svg"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+     </div>
+    </div>
+
+    <div class="dcard-body">
+     <div class="dcard-avatar-wrap">
+      <img class="dcard-avatar" src="Profile.png" onerror="this.onerror=null;this.src='https://skcoder001.github.io/dev/Profile.png'" alt="Subham Kumar Mallick" width="120" height="140">
+      <span class="dcard-status" title="Open for client builds & engineering roles"><i></i> Available</span>
+     </div>
+
+     <div class="dcard-details">
+      <div class="dcard-title-row">
+       <h3 class="dcard-name">Subham Kumar Mallick</h3>
+       <span class="dcard-verified" title="Verified Founder & Developer"><svg viewBox="0 0 24 24" fill="currentColor" class="ic"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+      </div>
+      <p class="dcard-role">Founder &amp; Full-Stack Engineer &middot; <strong>Code Master SK</strong></p>
+      <p class="dcard-location"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Sailashree Vihar, Bhubaneswar, India</p>
+
+      <div class="dcard-tags">
+       <span>Full-Stack Web</span>
+       <span>React / Next.js</span>
+       <span>Node.js / SQL</span>
+       <span>AI Automation</span>
+       <span>10+ Client Builds</span>
+      </div>
+     </div>
+    </div>
+
+    <div class="dcard-contact-strip">
+     <a href="https://wa.me/918114963709" target="_blank" rel="noopener noreferrer" class="dcard-pill wa" title="Chat on WhatsApp">
+      <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><use href="#ic-wa"/></svg>
+      <span>WhatsApp</span>
+     </a>
+     <a href="tel:+918114963709" class="dcard-pill" title="Call Subham">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.58 2.8.7A2 2 0 0 1 22 16.92Z"/></svg>
+      <span>Call</span>
+     </a>
+     <a href="mailto:subhammallick454@gmail.com" class="dcard-pill" title="Send Email">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <span>Email</span>
+     </a>
+     <a href="https://in.linkedin.com/in/subham-kumar-mallick" target="_blank" rel="noopener noreferrer" class="dcard-pill" title="LinkedIn Profile">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      <span>LinkedIn</span>
+     </a>
+     <a href="https://github.com/sk-mallick" target="_blank" rel="noopener noreferrer" class="dcard-pill" title="GitHub Profile">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#ic-gh"/></svg>
+      <span>GitHub</span>
+     </a>
+    </div>
+
+    <div class="dcard-actions">
+     <button class="btn btn-orange dcard-action-btn" id="btnShareNative" type="button">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      Share Profile
+     </button>
+     <button class="btn btn-dark dcard-action-btn" id="btnCopyLink" type="button">
+      <svg class="ic" id="copyIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+      <span id="copyText">Copy Link</span>
+     </button>
+     <button class="btn btn-outline dcard-action-btn" id="btnSaveVcard" type="button">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+      Save Contact (.vcf)
+     </button>
+     <button class="btn btn-outline dcard-action-btn" id="btnToggleQR" type="button" aria-expanded="false" aria-controls="qrPanel">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="5" height="5" x="3" y="3" rx="1"/><rect width="5" height="5" x="16" y="3" rx="1"/><rect width="5" height="5" x="3" y="16" rx="1"/><path d="M21 16h-3a2 2 0 0 0-2 2v3"/><path d="M21 21v.01"/><path d="M12 7v3a2 2 0 0 1-2 2H7"/><path d="M3 12h.01"/><path d="M12 3h.01"/><path d="M12 16v.01"/><path d="M16 12h1"/><path d="M21 12v.01"/><path d="M12 21v-1"/></svg>
+      Scan QR
+     </button>
+    </div>
+
+    <div class="dcard-qr-panel" id="qrPanel" hidden>
+     <div class="dcard-qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fskcoder001.github.io%2Fdev%2F" alt="Scan to visit Subham's Profile" width="170" height="170" loading="lazy">
+      <p>Scan with any smartphone camera to instantly open and share this profile.</p>
+     </div>
+    </div>
+
+    <div class="dcard-social-share">
+     <span class="dcard-share-label">Quick Share:</span>
+     <a class="social-share-btn wa" id="shareWhatsApp" href="#" target="_blank" rel="noopener noreferrer" title="Share via WhatsApp">
+      <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><use href="#ic-wa"/></svg> WhatsApp
+     </a>
+     <a class="social-share-btn li" id="shareLinkedIn" href="#" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
+      <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z"/></svg> LinkedIn
+     </a>
+     <a class="social-share-btn tw" id="shareTwitter" href="#" target="_blank" rel="noopener noreferrer" title="Share on X">
+      <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X / Twitter
+     </a>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Floating Toast Notification -->
+<div class="share-toast" id="shareToast" role="status" aria-live="polite">
+ <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+ <span id="toastMsg">Profile link copied to clipboard!</span>
+</div>
 
 <section class="section contact" id="contact">
  <div class="container contact-grid">
@@ -3010,5 +3269,155 @@ if(start){gate.classList.add('out');show(start,1)}
 else{document.body.classList.add('gating');setTimeout(()=>gate.classList.add('ready'),reduce?100:1750)}
 })();
 </script>
+
+<script>
+/* Profile Card & Share Interactive Features */
+(function() {
+  const shareBtn = document.getElementById('btnShareNative');
+  const copyBtn = document.getElementById('btnCopyLink');
+  const copyText = document.getElementById('copyText');
+  const vcardBtn = document.getElementById('btnSaveVcard');
+  const qrBtn = document.getElementById('btnToggleQR');
+  const qrPanel = document.getElementById('qrPanel');
+  const toast = document.getElementById('shareToast');
+  const toastMsg = document.getElementById('toastMsg');
+  const navShareBtn = document.getElementById('navShareBtn');
+
+  function showToast(msg) {
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._tid);
+    toast._tid = setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  function getProfileUrl() {
+    return window.location.origin + window.location.pathname;
+  }
+
+  // Native Web Share API
+  async function shareProfile() {
+    const profileUrl = getProfileUrl();
+    const shareData = {
+      title: 'Subham Kumar Mallick | Code Master SK',
+      text: 'Subham Kumar Mallick — Founder & Full-Stack Developer at Code Master SK. High-performance websites, learning portals, and AI systems.',
+      url: profileUrl
+    };
+
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          copyLink();
+        }
+      }
+    } else {
+      copyLink();
+    }
+  }
+
+  // Copy Link
+  function copyLink() {
+    const profileUrl = getProfileUrl();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(profileUrl).then(function() {
+        if (copyText) copyText.textContent = 'Copied! ✓';
+        showToast('Profile link copied to clipboard!');
+        setTimeout(function() {
+          if (copyText) copyText.textContent = 'Copy Link';
+        }, 2400);
+      }).catch(function() { fallbackCopy(profileUrl); });
+    } else {
+      fallbackCopy(profileUrl);
+    }
+  }
+
+  function fallbackCopy(text) {
+    const input = document.createElement('textarea');
+    input.value = text;
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    document.body.appendChild(input);
+    input.select();
+    try {
+      document.execCommand('copy');
+      showToast('Profile link copied to clipboard!');
+    } catch (e) {
+      prompt('Copy this link:', text);
+    }
+    document.body.removeChild(input);
+  }
+
+  // Download vCard (.vcf)
+  function downloadVCard() {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+N:Mallick;Subham;Kumar;;
+FN:Subham Kumar Mallick
+ORG:Code Master SK
+TITLE:Founder & Full-Stack Developer
+TEL;TYPE=CELL,VOICE,PREF:+918114963709
+EMAIL;TYPE=INTERNET,PREF:subhammallick454@gmail.com
+URL:https://skcoder001.github.io/dev/
+ADR;TYPE=WORK:;;Sailashree Vihar;Bhubaneswar;Odisha;751021;India
+NOTE:Founder of Code Master SK. Full-Stack Developer & AI Automation Builder.
+END:VCARD`;
+    const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Subham-Kumar-Mallick-CodeMasterSK.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('Contact card (.vcf) downloaded!');
+  }
+
+  // Toggle QR Panel
+  function toggleQR() {
+    if (!qrPanel) return;
+    const isHidden = qrPanel.hidden;
+    qrPanel.hidden = !isHidden;
+    qrPanel.classList.toggle('open', isHidden);
+    if (qrBtn) qrBtn.setAttribute('aria-expanded', String(isHidden));
+  }
+
+  // Setup Social Direct Links
+  const shareWhatsApp = document.getElementById('shareWhatsApp');
+  const shareLinkedIn = document.getElementById('shareLinkedIn');
+  const shareTwitter = document.getElementById('shareTwitter');
+
+  const currUrl = encodeURIComponent(getProfileUrl());
+  const shareText = encodeURIComponent('Check out Subham Kumar Mallick — Founder & Full-Stack Developer at Code Master SK: ');
+
+  if (shareWhatsApp) shareWhatsApp.href = 'https://api.whatsapp.com/send?text=' + shareText + currUrl;
+  if (shareLinkedIn) shareLinkedIn.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + currUrl;
+  if (shareTwitter) shareTwitter.href = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=' + currUrl;
+
+  // Attach Event Listeners
+  if (shareBtn) shareBtn.addEventListener('click', shareProfile);
+  if (copyBtn) copyBtn.addEventListener('click', copyLink);
+  if (vcardBtn) vcardBtn.addEventListener('click', downloadVCard);
+  if (qrBtn) qrBtn.addEventListener('click', toggleQR);
+  if (navShareBtn) {
+    navShareBtn.addEventListener('click', function() {
+      const card = document.getElementById('card');
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth' });
+        const dc = document.getElementById('digitalProfileCard');
+        if (dc) {
+          dc.style.outline = '4px solid var(--orange)';
+          setTimeout(function() { dc.style.outline = ''; }, 1800);
+        }
+      } else {
+        shareProfile();
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

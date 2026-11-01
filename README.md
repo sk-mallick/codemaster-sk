@@ -23,7 +23,18 @@ The platform serves a dual purpose:
 - **Custom Web Architecture**: Semantic HTML5, modern CSS3, and lightweight vanilla JavaScript / React. Fast Core Web Vitals (<1s first contentful paint) and fluid mobile responsiveness.
 - **Learning Platforms & LMS**: Specialized student portals, online assessment engines, and question banks (including EnglishJibi Learning Portal and Student Panel Pro).
 - **Business Systems & Automation**: Google Workspace/Sheets automation, REST API integrations, and instant WhatsApp/Email inquiry pipelines.
+- **Digital Business Card & Sharing**: Interactive shareable profile card with native Web Share API integration, dynamic vCard (`.vcf`) contact download, on-demand QR code, and 1-click clipboard copy.
 - **Production SEO & Structured Data**: Comprehensive Schema.org JSON-LD graph (`Person`, `WebSite`, `ProfilePage`, `ItemList`), Open Graph previews, and robots protocol.
+
+---
+
+## 🪪 Digital Profile Card & Sharing Features
+
+- **Native Web Share**: 1-click sharing to WhatsApp, Messages, Slack, AirDrop, etc. via `navigator.share()`.
+- **vCard (.vcf) Export**: Generates and downloads Subham's official vCard contact directly into phone address books.
+- **QR Code Scanner**: In-person scannable QR code to instantly pull up Subham's card on mobile cameras.
+- **Instant Copy Link**: Fast link copying with animated feedback and toast notifications.
+- **Direct Socials**: Pre-configured WhatsApp, LinkedIn, GitHub, and phone call actions.
 
 ---
 
@@ -47,8 +58,8 @@ The platform serves a dual purpose:
 ## 📁 Repository Structure
 
 ```text
-├── index.html            # Unified studio & portfolio architecture with SEO & JSON-LD
-├── Profile.png           # Founder portrait (Hero section)
+├── index.html            # Unified studio, portfolio & digital profile card
+├── Profile.png           # Founder portrait (Hero section & Profile Card)
 ├── Profile1.png          # Alternate portrait asset
 ├── Profile2.png          # Alternate portrait asset
 ├── Workspace.jpg         # Code Master SK studio & developer workplace photography
