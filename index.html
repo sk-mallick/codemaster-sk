@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Subham Kumar Mallick | Full-Stack Web Developer &amp; AI Automation Builder</title>
-<meta name="description" content="Subham Kumar Mallick is a full-stack web developer, AI automation builder, and Computer Science undergraduate in Bhubaneswar, building responsive web apps, student portals, and digital systems.">
+<title>Code Master SK &middot; Subham Kumar Mallick | Web Studio &amp; Full-Stack Portfolio</title>
+<meta name="description" content="Code Master SK by Subham Kumar Mallick is a premier web design and software development studio in Bhubaneswar, building high-conversion websites, learning portals, and AI automation.">
 <meta name="keywords" content="Subham Kumar Mallick, skcoder001, sk-mallick, Full-Stack Web Developer, Web Developer Bhubaneswar, React Developer, Next.js Developer, AI Automation, EnglishJibi, Student Panel Pro, Portfolio, Frontend Engineer">
 <meta name="author" content="Subham Kumar Mallick">
 <meta name="publisher" content="Subham Kumar Mallick">
@@ -245,6 +245,34 @@
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer onload="window.lucide&&window.lucide.createIcons()"></script>
 
 <style id="portfolio-unified-styles">
+
+/* ---- Code Master SK Studio Section & Branding ---- */
+.brand{display:inline-flex;align-items:center;gap:12px;font-size:1.05rem;font-weight:950;letter-spacing:-.04em;white-space:nowrap}
+.brand-text{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.brand-text strong{font-size:.95rem;letter-spacing:-.03em;color:var(--ink)}
+.brand-text small{font-size:.65rem;font-weight:750;letter-spacing:.06em;color:var(--orange-dark);text-transform:uppercase}
+.studio{background:#fffcf3;position:relative}
+.studio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:30px}
+.studio-card{padding:30px 26px;background:var(--soft);border:1px solid #19191912;border-radius:var(--radius);transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+.studio-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#ff8a2455}
+.studio-icon{width:52px;height:52px;display:grid;place-items:center;background:var(--yellow);border-radius:16px;color:var(--orange-dark);margin-bottom:22px}
+.studio-icon svg{width:26px;height:26px}
+.studio-card h3{font-size:1.26rem;margin-bottom:10px;line-height:1.25}
+.studio-card p{color:var(--muted);font-size:.9rem;line-height:1.55;margin:0 0 18px;flex:1}
+.studio-features{list-style:none;padding:0;margin:0;display:grid;gap:9px;border-top:1px solid #19191912;padding-top:16px;font-size:.82rem;font-weight:750;color:#3b362f}
+.studio-features li{display:flex;align-items:center;gap:8px}
+.studio-features svg{width:16px;height:16px;color:var(--orange);flex:none}
+.studio-banner{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:30px 34px;background:var(--ink);color:white;border-radius:var(--radius);box-shadow:0 14px 40px #19191918;margin-top:12px}
+.studio-banner-content{max-width:720px}
+.studio-badge{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;background:#ffffff18;color:var(--yellow);border-radius:99px;font-size:.72rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.studio-banner h4{font-size:1.18rem;margin:0 0 8px;letter-spacing:-.02em;color:var(--yellow)}
+.studio-banner p{font-size:.88rem;color:#c9c3b4;margin:0;line-height:1.55}
+.studio-banner .btn{white-space:nowrap;flex:none}
+@media(max-width:960px){
+  .studio-grid{grid-template-columns:1fr}
+  .studio-banner{flex-direction:column;align-items:flex-start;padding:24px 22px}
+}
+
 :root{
  --yellow:#FFF4C7;--yellow-2:#FFE36A;--orange:#FF8A24;--orange-dark:#C95400;
  --ink:#191919;--ink-2:#292722;--paper:#FFFCF3;--white:#fff;--muted:#6E685C;
@@ -1480,11 +1508,24 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
 <div class="m-progress" aria-hidden="true"><i></i></div>
 <header class="nav-wrap">
  <nav class="container" aria-label="Main navigation">
-  <a class="brand" href="#home" aria-label="Subham Mallick home"><span class="brand-mark">SK</span><span>SUBHAM<span style="color:var(--orange-dark)">.</span></span></a>
+  <a class="brand" href="#home" aria-label="Code Master SK - Subham Kumar Mallick">
+   <span class="brand-mark">SK</span>
+   <div class="brand-text">
+    <strong>CODE MASTER SK</strong>
+    <small>by Subham Kumar Mallick</small>
+   </div>
+  </a>
   <div class="nav-links" id="navLinks">
-   <a href="#home">Home</a><a href="#about">About Me</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#work">Projects</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+   <a href="#home">Home</a>
+   <a href="#studio">Studio</a>
+   <a href="#about">About</a>
+   <a href="#services">Services</a>
+   <a href="#work">Projects</a>
+   <a href="#pricing">Pricing</a>
+   <a href="#reviews">Reviews</a>
+   <a href="#contact">Contact</a>
   </div>
-  <a class="btn btn-dark nav-cta" href="#contact">Let's build <svg class="ic ic-r" aria-hidden="true" focusable="false"><use href="#ic-right"/></svg></a>
+  <a class="btn btn-dark nav-cta" href="#contact">Start a Project <svg class="ic ic-r" aria-hidden="true" focusable="false"><use href="#ic-right"/></svg></a>
   <button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-label="Open navigation" aria-expanded="false"><i data-lucide="menu"></i></button>
  </nav>
 </header>
@@ -1508,19 +1549,71 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
  </div>
 </section>
 
-<div class="trust-strip"><div class="container trust-inner"><span>What I build</span><strong>Websites & Portfolios</strong><strong>Learning Platforms</strong><strong>Business Systems</strong><strong>AI Automations</strong></div></div>
+<div class="trust-strip"><div class="container trust-inner"><span>Code Master SK</span><strong>Custom Websites</strong><strong>Education Platforms</strong><strong>Business Systems</strong><strong>AI Automation</strong><strong>Sailashree Vihar, Bhubaneswar</strong></div></div>
+
+<section class="section studio" id="studio">
+ <div class="container">
+  <div class="section-head reveal">
+   <div>
+    <p class="eyebrow">The Studio &middot; Code Master SK</p>
+    <h2>Engineered for growth.<br><span style="color:var(--orange-dark)">Built without bloat.</span></h2>
+   </div>
+   <p>Code Master SK is my independent digital studio based in Sailashree Vihar, Bhubaneswar. Combining engineering precision with modern visual design, I deliver custom digital platforms that load instantly, convert visitors, and solve real operational problems.</p>
+  </div>
+  <div class="studio-grid">
+   <div class="studio-card reveal">
+    <div class="studio-icon"><i data-lucide="layers"></i></div>
+    <h3>Custom Web Architecture</h3>
+    <p>Handcrafted, semantic, lightweight web interfaces built with HTML5, CSS3, modern JavaScript, and React. Zero slow templates or heavy site builders&mdash;pure performance, instant load times, and fluid mobile UX.</p>
+    <ul class="studio-features">
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% Mobile &amp; Tablet Responsive</li>
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Core Web Vitals optimized (&lt;1s load)</li>
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Production-ready on-page SEO</li>
+    </ul>
+   </div>
+   <div class="studio-card reveal">
+    <div class="studio-icon"><i data-lucide="graduation-cap"></i></div>
+    <h3>Education Portals &amp; LMS</h3>
+    <p>Specialized student management, question banks, and learning portals&mdash;like EnglishJibi Digital Learning Portal and Student Panel Pro&mdash;engineered for daily student and teacher usability.</p>
+    <ul class="studio-features">
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Role-based student &amp; admin dashboards</li>
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Interactive assessment &amp; question banks</li>
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Automated progress &amp; fee tracking</li>
+    </ul>
+   </div>
+   <div class="studio-card reveal">
+    <div class="studio-icon"><i data-lucide="workflow"></i></div>
+    <h3>Business Software &amp; AI Tools</h3>
+    <p>Custom operational tools, Google Apps Script / Sheets automation, REST API integrations, and practical AI-assisted workflows tailored to eliminate manual bottlenecks.</p>
+    <ul class="studio-features">
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Google Sheets &amp; Apps Script database links</li>
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Instant WhatsApp &amp; Email lead alerts</li>
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Custom API connections &amp; automation</li>
+    </ul>
+   </div>
+  </div>
+  <div class="studio-banner reveal">
+   <div class="studio-banner-content">
+    <span class="studio-badge">Code Master SK Standard</span>
+    <h4>Direct Founder Access &middot; Transparent Pricing &middot; Complete Code Ownership</h4>
+    <p>No middlemen or account managers. Every client works directly with Subham from initial discovery to live production deployment with 1&ndash;3 months warranty included.</p>
+   </div>
+   <a class="btn btn-orange" href="#contact">Discuss Your Project <svg class="ic ic-r" aria-hidden="true" focusable="false"><use href="#ic-right"/></svg></a>
+  </div>
+ </div>
+</section>
 
 <section class="section" id="about">
  <div class="container about-grid">
-  <div class="about-visual reveal"><img class="about-img" src="Workspace.jpg" onerror="this.onerror=null;this.src='https://skcoder001.github.io/dev/Workspace.jpg'" alt="Subham's workspace" loading="lazy" decoding="async"></div>
+  <div class="about-visual reveal"><img class="about-img" src="Workspace.jpg" onerror="this.onerror=null;this.src='https://skcoder001.github.io/dev/Workspace.jpg'" alt="Code Master SK studio and workspace" loading="lazy" decoding="async"></div>
   <div class="about-copy reveal">
-   <p class="eyebrow">About Subham</p><h2>Build with purpose.<br><span style="color:var(--orange-dark)">Keep learning.</span></h2>
-   <p class="lead">Computer Science undergraduate focused on frontend engineering, UI/UX, and AI-powered workflows.</p>
-   <p>From business websites to learning tools, I turn complex needs into clear, usable interfaces.</p>
+   <p class="eyebrow">The Founder &amp; Workspace</p><h2>Build with purpose.<br><span style="color:var(--orange-dark)">From idea to production.</span></h2>
+   <p class="lead">I'm Subham Kumar Mallick&mdash;founder of Code Master SK and a Computer Science undergraduate at Trident Academy of Technology, Bhubaneswar.</p>
+   <p>From this dedicated studio workspace, I design, architect, and ship production websites and web software. Having shipped 10+ live projects across healthcare, construction, coaching, and student communities, I blend engineering discipline with high-end aesthetic craft.</p>
    <div class="stats">
-    <div class="stat"><strong>10</strong><span>Web projects & tools</span></div>
-    <div class="stat"><strong>UI-first</strong><span>Design-minded builds</span></div>
-    <div class="stat"><strong>AI + Web</strong><span>Areas of exploration</span></div>
+    <div class="stat"><strong>10+</strong><span>Delivered projects</span></div>
+    <div class="stat"><strong>Code Master SK</strong><span>Independent studio</span></div>
+    <div class="stat"><strong>Bhubaneswar</strong><span>Local &amp; global clients</span></div>
    </div>
   </div>
  </div>
@@ -1680,13 +1773,13 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
 </section>
 </main>
 
-<section class="signature" aria-label="Portfolio signature">
+<section class="signature" aria-label="Code Master SK and Subham Kumar Mallick signature">
   <div class="container">
-    <p class="eyebrow">Built with intent</p>
-    <div class="signature-name" aria-label="Subham Kumar Mallick">SUBHAM<span>.</span></div>
+    <p class="eyebrow">Code Master SK &middot; Built with intent</p>
+    <div class="signature-name" aria-label="Code Master SK by Subham Kumar Mallick">CODE MASTER SK<span>.</span></div>
     <div class="signature-bottom">
-      <span class="signature-caption">WEB &middot; PRODUCT &middot; AUTOMATION</span>
-      <p class="signature-copy">&copy; <span id="year"></span> <strong>Subham Kumar Mallick</strong></p>
+      <span class="signature-caption">SUBHAM KUMAR MALLICK &middot; WEB STUDIO &middot; SOFTWARE &middot; AUTOMATION</span>
+      <p class="signature-copy">&copy; <span id="year"></span> <strong>Code Master SK</strong> &middot; Engineered by Subham Kumar Mallick &middot; Bhubaneswar, Odisha</p>
     </div>
     <div class="signature-contact-links" aria-label="Contact and social links">
       <a href="https://github.com/sk-mallick" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub">
@@ -2812,7 +2905,7 @@ ${DRW(DNAV,'wa')}
 <footer><div class="wr"><span>&copy; ${yr} Subham Kumar Mallick</span><span>Full-stack web developer</span></div></footer></div>`;
 
 const root=document.documentElement,gate=document.getElementById('gate'),fab=document.getElementById('swFab'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-const TITLE={recruiter:'Subham Kumar Mallick | Full-Stack Developer',client:'Subham Kumar Mallick | Developer & Digital Builder',developer:'Subham Kumar Mallick | Developer Portfolio'};
+const TITLE={recruiter:'Subham Kumar Mallick | Full-Stack Developer & Founder',client:'Code Master SK by Subham | Digital Studio & Web Solutions',developer:'Subham Kumar Mallick | Developer Portfolio & Code Master SK'};
 let io;
 function motion(p){
  sr.querySelectorAll('section[id]').forEach(e=>e.dataset.sec='1');

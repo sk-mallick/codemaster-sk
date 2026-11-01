@@ -1,6 +1,6 @@
-# Subham Kumar Mallick — Developer & Digital Builder
+# Code Master SK · Subham Kumar Mallick
 
-> Personal developer portfolio showcasing full-stack web applications, educational platforms, client websites, and AI automation systems.
+> Official website and digital portfolio for **Code Master SK**, founded by **Subham Kumar Mallick** — Full-Stack Developer & AI Automation Builder.
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://skcoder001.github.io/dev/)
 [![GitHub](https://img.shields.io/badge/GitHub-sk--mallick-181717.svg?logo=github)](https://github.com/sk-mallick)
@@ -8,28 +8,26 @@
 
 ---
 
-## 🌟 Overview
+## 🌟 About Code Master SK & Subham
 
-This repository powers the personal portfolio website of **Subham Kumar Mallick**, a Computer Science undergraduate and full-stack web developer based in Bhubaneswar, Odisha, India.
+**Code Master SK** is an independent creative technology and web studio based in Sailashree Vihar, Bhubaneswar, Odisha, founded and led by **Subham Kumar Mallick**.
 
-- **Frontend Architecture**: Mobile-first responsive layout with native CSS variables, custom typography, fluid animations, and Lucide SVG icons.
-- **Multiple Role Views**: Interactive experience switcher tailored for Recruiters, Clients, and Developers.
-- **Production SEO**: Full Schema.org JSON-LD structured data (`Person`, `WebSite`, `ProfilePage`, `ItemList`), Open Graph preview cards, Twitter cards, sitemap, and rich metadata.
-- **High Performance**: Zero heavy dependencies, deferred script loading, native lazy-loaded media with local caching and CDN fallback.
-
----
-
-## 🛠️ Tech Stack
-
-- **Markup & Layout**: Semantic HTML5, CSS3 (Modern Flexbox, CSS Grid, Custom Properties, Backdrop Filters)
-- **Scripting & Interactivity**: Vanilla JavaScript (ES6+), Touch/Pointer Gestures, IntersectionObserver
-- **Icons**: [Lucide Icons](https://lucide.dev)
-- **Data & APIs**: REST APIs, Google Sheets Webhooks, FormSubmit Email Dispatch
-- **SEO & Structured Data**: Schema.org JSON-LD Graph, Open Graph, Twitter Cards, XML Sitemap, Robots Protocol
+The platform is architected to serve a dual purpose:
+1. **Studio Showcase & Client Solutions**: Presenting Code Master SK's production capabilities, high-conversion business websites, custom LMS/student platforms, and workflow automation.
+2. **Founder & Developer Portfolio**: Demonstrating Subham's technical engineering depth, full-stack open-source repositories, reverse-engineering projects, and academic foundations in Computer Science.
 
 ---
 
-## 🚀 Featured Projects
+## 🛠️ Studio Pillars & Capabilities
+
+- **Custom Web Architecture**: Semantic HTML5, modern CSS3, and lightweight vanilla JavaScript / React. Fast Core Web Vitals (<1s first contentful paint) and fluid mobile responsiveness.
+- **Learning Platforms & LMS**: Specialized student portals, online assessment engines, and question banks (including EnglishJibi Learning Portal and Student Panel Pro).
+- **Business Systems & Automation**: Google Workspace/Sheets automation, REST API integrations, and instant WhatsApp/Email inquiry pipelines.
+- **Production SEO & Structured Data**: Comprehensive Schema.org JSON-LD graph (`Person`, `WebSite`, `ProfilePage`, `ItemList`), Open Graph previews, XML sitemap, and robots protocol.
+
+---
+
+## 🚀 Live Production Builds
 
 | Project | Category | Tech | Live Demo |
 | :--- | :--- | :--- | :--- |
@@ -49,18 +47,18 @@ This repository powers the personal portfolio website of **Subham Kumar Mallick*
 ## 📁 Repository Structure
 
 ```text
-├── index.html            # Main portfolio page with full SEO & structured data
+├── index.html            # Unified studio & portfolio architecture with SEO & JSON-LD
 ├── Profile.png           # Founder portrait (Hero section)
 ├── Profile1.png          # Alternate portrait asset
 ├── Profile2.png          # Alternate portrait asset
-├── Workspace.jpg         # Founder workspace photography (About section)
-├── og-cover.png          # Social preview image (1200x630 Open Graph)
+├── Workspace.jpg         # Code Master SK studio & developer workplace photography
+├── og-cover.png          # High-resolution 1200x630 Open Graph preview card
 ├── og-cover.jpg          # Fallback Open Graph image
 ├── apple-touch-icon.png  # Apple touch icon (180x180)
 ├── favicon-32x32.png     # Browser favicon 32x32
 ├── favicon-16x16.png     # Browser favicon 16x16
 ├── site.webmanifest      # Progressive Web App manifest
-├── sitemap.xml           # Search engine sitemap
+├── sitemap.xml           # Search engine sitemap with #studio and key routes
 ├── robots.txt            # Search engine crawler configuration
 ├── .gitignore            # Git exclusion rules (ignores local old/ archives)
 └── README.md             # Project documentation
@@ -68,8 +66,9 @@ This repository powers the personal portfolio website of **Subham Kumar Mallick*
 
 ---
 
-## 📬 Contact & Connect
+## 📬 Contact & Studio Inquiry
 
+- **Studio Location**: Sailashree Vihar, Bhubaneswar, Odisha, India
 - **Email**: [subhammallick454@gmail.com](mailto:subhammallick454@gmail.com)
 - **WhatsApp**: [+91 81149 63709](https://wa.me/918114963709)
 - **LinkedIn**: [in/subham-kumar-mallick](https://in.linkedin.com/in/subham-kumar-mallick)
