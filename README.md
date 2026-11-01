@@ -2,7 +2,7 @@
 
 > Official website and digital portfolio for **Code Master SK**, founded by **Subham Kumar Mallick** — Full-Stack Developer & AI Automation Builder.
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://skcoder001.github.io/dev/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://sk-mallick.github.io/codemaster-sk/)
 [![GitHub](https://img.shields.io/badge/GitHub-sk--mallick-181717.svg?logo=github)](https://github.com/sk-mallick)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-subham--kumar--mallick-0A66C2.svg?logo=linkedin)](https://in.linkedin.com/in/subham-kumar-mallick)
 
@@ -59,6 +59,7 @@ The platform serves a dual purpose:
 
 ```text
 ├── index.html            # Unified studio, portfolio & digital profile card
+├── og-cover.jpg          # Code Master SK branded social share preview card (1024x865)
 ├── Profile.png           # Founder portrait (Hero section & Profile Card)
 ├── Profile1.png          # Alternate portrait asset
 ├── Profile2.png          # Alternate portrait asset
