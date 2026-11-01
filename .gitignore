@@ -1,0 +1,8 @@
+# Local backups & legacy archives
+old/
+
+# Environment and editor files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
