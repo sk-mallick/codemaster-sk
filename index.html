@@ -241,7 +241,7 @@
 </script>
 
 <link rel="preconnect" href="https://unpkg.com" crossorigin>
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer onload="window.lucide&&window.lucide.createIcons()"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer onload="window.lucide&&window.lucide.createIcons()"></script>
 
 <style id="portfolio-unified-styles">
 
@@ -1618,6 +1618,56 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
 .contact-links{margin-top:clamp(22px,3vw,30px)}
 .footer-inner{row-gap:14px}
 </style>
+<noscript><style>.reveal,.m-w>span{opacity:1!important;transform:none!important}.intro-splash,.gate,#introSplash{display:none!important}</style></noscript>
+<style id="ux-fixes">
+/* ===== UX audit fixes ===== */
+/* Tablet nav: 9 links + Share + CTA overflowed between ~680px and ~1100px, so use the menu there */
+@media(max-width:1120px){
+ .menu-toggle{display:grid!important;place-items:center}
+ .nav-cta{display:none!important}
+ .nav-links{display:none!important;position:absolute;top:100%;left:0;right:0;padding:12px 24px 20px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 16px 30px #19191912;flex-direction:column;align-items:stretch;gap:0;max-height:calc(100dvh - 76px);overflow-y:auto}
+ .nav-links.open{display:flex!important}
+ .nav-links a{min-height:48px}
+ .nav-share-btn{margin-left:auto;min-height:44px}
+}
+@media(max-width:560px){.nav-share-btn span{display:none}.nav-share-btn{padding:0 12px}}
+/* Skip link */
+.skip{position:fixed;left:12px;top:-60px;z-index:10000;background:var(--ink);color:var(--yellow);padding:12px 18px;border-radius:12px;font-weight:800}
+.skip:focus{top:12px}
+/* Gate: tell people what to do, and give clients a way straight in */
+.gate-q{grid-column:1/-1;text-align:center;font-weight:800;font-size:clamp(1.1rem,2.6vw,1.5rem);letter-spacing:-.03em;margin:0 0 4px;opacity:0;transition:opacity .6s}
+.gate.ready .gate-q{opacity:1}
+.gate-skip{position:absolute;bottom:max(20px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:none;border:0;border-bottom:1px solid currentColor;color:#3b4a66;font-weight:700;font-size:.9rem;padding:10px 4px;cursor:pointer;opacity:0;transition:opacity .6s .5s}
+.gate.ready .gate-skip{opacity:1}
+/* Icons: .ic forced fill:none, so filled WhatsApp/LinkedIn/X icons rendered as outlines */
+.digital-card svg[fill="currentColor"],.social-share-btn svg[fill="currentColor"]{fill:currentColor;stroke:none}
+.dcard-verified,.nfc-svg{display:none} /* self-awarded "verified" badge and a bell icon labelled NFC */
+/* Project cards: wrap long titles instead of shrinking every title to ~12px */
+#work .project-heading h3{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;min-height:2.6em}
+#work .project-visual .shot{grid-area:1/1;width:100%;height:100%;object-fit:cover;object-position:top;border-radius:15px;background:#fff}
+/* Native swipe carousel on touch / small screens (no scroll-jacking) */
+@media (max-width:760px),(hover:none) and (pointer:coarse){
+ #work .work-pin{position:static!important;height:auto!important;min-height:0!important;padding:clamp(56px,10vw,80px) 0!important}
+ #work .project-grid{overflow-x:auto!important;scroll-snap-type:x mandatory!important;touch-action:pan-x pan-y!important;cursor:auto!important}
+ #work .project-card{scroll-snap-align:start!important}
+}
+/* About stats: long values overflowed three narrow columns */
+.stat strong{overflow-wrap:anywhere}
+@media(max-width:520px){.stats{grid-template-columns:1fr!important}.stat{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 16px!important}.stat span{margin:0}}
+.m-sw{opacity:.4} /* scroll-reveal text started at 22% opacity: unreadable */
+/* Touch targets */
+.social-share-btn,.dcard-pill{min-height:40px}
+.signature-contact-links a{min-width:40px!important;min-height:40px!important}
+/* Footer name: never wrap mid-word; script scales it to fit */
+.signature .signature-name{white-space:nowrap!important;overflow-wrap:normal!important}
+/* Form */
+.form-actions{display:flex;gap:10px;flex-wrap:wrap}
+/* Stop endless hero/marquee animations while off-screen (saves battery on phones) */
+html.hero-off .hero *,html.hero-off .hero *::before,html.hero-off .hero *::after{animation-play-state:paused!important}
+html.trust-off .m-track{animation-play-state:paused!important}
+/* Reviews are SAMPLE text. Until real ones exist, uncomment to hide the section and its nav link:
+#reviews,.nav-links a[href="#reviews"]{display:none} */
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -1654,8 +1704,8 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
    <a href="#studio">Studio</a>
    <a href="#about">About</a>
    <a href="#services">Services</a>
-   <a href="#work">Projects</a>
    <a href="#pricing">Pricing</a>
+   <a href="#work">Projects</a>
    <a href="#reviews">Reviews</a>
    <a href="#card">Card</a>
    <a href="#contact">Contact</a>
@@ -1703,7 +1753,7 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
     <p>Handcrafted, semantic, lightweight web interfaces built with HTML5, CSS3, modern JavaScript, and React. Zero slow templates or heavy site builders&mdash;pure performance, instant load times, and fluid mobile UX.</p>
     <ul class="studio-features">
      <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 100% Mobile &amp; Tablet Responsive</li>
-     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Core Web Vitals optimized (&lt;1s load)</li>
+     <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Fast, performance-tuned pages</li>
      <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Production-ready on-page SEO</li>
     </ul>
    </div>
@@ -1745,7 +1795,7 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
   <div class="about-copy reveal">
    <p class="eyebrow">The Founder &amp; Workspace</p><h2>Build with purpose.<br><span style="color:var(--orange-dark)">From idea to production.</span></h2>
    <p class="lead">I'm Subham Kumar Mallick&mdash;founder of Code Master SK and a Computer Science undergraduate at Trident Academy of Technology, Bhubaneswar.</p>
-   <p>From this dedicated studio workspace, I design, architect, and ship production websites and web software. Having shipped 10+ live projects across healthcare, construction, coaching, and student communities, I blend engineering discipline with high-end aesthetic craft.</p>
+   <p>From this dedicated studio workspace, I design, architect, and ship production websites and web software. Having shipped 10+ live projects across fitness, construction, education, and student communities, I blend engineering discipline with high-end aesthetic craft.</p>
    <div class="stats">
     <div class="stat"><strong>10+</strong><span>Delivered projects</span></div>
     <div class="stat"><strong>Code Master SK</strong><span>Independent studio</span></div>
@@ -1953,7 +2003,7 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
       <span>LinkedIn</span>
      </a>
      <a href="https://github.com/sk-mallick" target="_blank" rel="noopener noreferrer" class="dcard-pill" title="GitHub Profile">
-      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="#ic-gh"/></svg>
+      <svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><use href="#ic-gh"/></svg>
       <span>GitHub</span>
      </a>
     </div>
@@ -2031,12 +2081,12 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
 </section>
 </main>
 
-<section class="signature" aria-label="Code Master SK and Subham Kumar Mallick signature">
+<section class="signature" aria-label="Subham Kumar Mallick and Code Master SK signature">
   <div class="container">
-    <p class="eyebrow">Code Master SK &middot; Built with intent</p>
-    <div class="signature-name" aria-label="Code Master SK by Subham Kumar Mallick">CODE MASTER SK<span>.</span></div>
+    <p class="eyebrow">Founder &amp; Studio Lead &middot; Code Master SK</p>
+    <div class="signature-name" aria-label="Subham Kumar Mallick">SUBHAM<span>.</span></div>
     <div class="signature-bottom">
-      <span class="signature-caption">SUBHAM KUMAR MALLICK &middot; WEB STUDIO &middot; SOFTWARE &middot; AUTOMATION</span>
+      <span class="signature-caption">CODE MASTER SK &middot; BY SUBHAM KUMAR MALLICK &middot; WEB STUDIO &middot; SOFTWARE &middot; AUTOMATION</span>
       <p class="signature-copy">&copy; <span id="year"></span> <strong>Code Master SK</strong> &middot; Engineered by Subham Kumar Mallick &middot; Bhubaneswar, Odisha</p>
     </div>
     <div class="signature-contact-links" aria-label="Contact and social links">
@@ -2139,7 +2189,13 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
   let lastW = 0;
   let lastH = 0;
 
+  const mobileRail = window.matchMedia('(max-width: 760px), (hover: none) and (pointer: coarse)');
   function measure() {
+    if (mobileRail.matches) {
+      lastW = window.innerWidth; lastH = window.innerHeight;
+      pinWrap.style.height = ''; pin.style.height = ''; pin.style.minHeight = ''; pin.style.top = '';
+      maxShift = 0; prevButton.disabled = false; nextButton.disabled = false; return;
+    }
     const navH = navWrap ? navWrap.offsetHeight : 0;
     const viewH = window.innerHeight;
     lastW = window.innerWidth;
@@ -2173,6 +2229,12 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
     return wrapTop - stickTop + Math.min(maxShift, Math.max(0, shift));
   }
   function moveByCard(direction) {
+    if (mobileRail.matches) {
+      const c = projectTrack.querySelector('.project-card');
+      const g = parseFloat(getComputedStyle(projectTrack).columnGap) || 0;
+      projectTrack.scrollBy({ left: direction * ((c ? c.getBoundingClientRect().width : 320) + g), behavior: 'smooth' });
+      return;
+    }
     const firstCard = projectTrack.querySelector('.project-card');
     const gap = parseFloat(getComputedStyle(projectTrack).columnGap) || 0;
     const step = (firstCard ? firstCard.getBoundingClientRect().width : 320) + gap;
@@ -2189,7 +2251,7 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
   // Keyboard users tabbing to a card link bring that card into view.
   projectTrack.addEventListener('focusin', event => {
     const card = event.target.closest && event.target.closest('.project-card');
-    if (!card) return;
+    if (!card || mobileRail.matches) return;
     const left = card.getBoundingClientRect().left - projectTrack.getBoundingClientRect().left + projectTrack.scrollLeft;
     window.scrollTo({ top: pageYForShift(left), behavior: 'auto' });
   });
@@ -2200,6 +2262,7 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
     if (window.innerWidth !== lastW || Math.abs(window.innerHeight - lastH) > 150) measure();
   }, { passive: true });
   window.addEventListener('load', measure, { once: true });
+  if (mobileRail.addEventListener) mobileRail.addEventListener('change', () => measure());
   // Re-measure when content size changes (fonts, icons, title-fit script).
   if ('ResizeObserver' in window) {
     let lastPinContent = 0;
@@ -2399,7 +2462,7 @@ html[data-p=developer] #swFab:hover{background:#3ddc97;color:#04130c}
         var a=map[e.target.id]; if(a) a.classList.add('m-active');
       });
     },{rootMargin:'-45% 0px -50% 0px'});
-    ['home','about','services','work','skills','process','faq','reviews','contact'].forEach(function(id){
+    ['home','studio','about','services','pricing','work','skills','process','faq','reviews','card','contact'].forEach(function(id){
       var el=document.getElementById(id); if(el) so.observe(el);
     });
   }
@@ -3423,5 +3486,81 @@ END:VCARD`;
 })();
 </script>
 
+<script id="ux-fixes-js">
+(()=>{
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const main=$('main');
+if(main){main.id='main';main.tabIndex=-1;const a=document.createElement('a');a.className='skip';a.href='#main';a.textContent='Skip to content';document.body.prepend(a);}
+
+/* Project previews: local screenshot -> live screenshot service -> existing placeholder */
+$$('#work .project-card').forEach(c=>{
+ const link=$('.project-link',c),vis=$('.project-visual',c),idx=$('.project-index',c),h=$('h3',c);
+ if(!link||!vis||!idx)return;
+ const img=new Image();img.className='shot';img.loading='lazy';img.decoding='async';
+ img.alt='Screenshot of '+(h?h.textContent:'project');
+ let tried=0;
+ img.onerror=()=>{if(!tried++)img.src='https://s0.wp.com/mshots/v1/'+encodeURIComponent(link.href)+'?w=800&h=500';else img.remove();};
+ img.src='assets/projects/'+idx.textContent.trim()+'.jpg';
+ vis.appendChild(img);
+});
+
+/* Pricing buttons pre-fill the enquiry */
+const msg=$('#message');
+$$('.pr .btn').forEach(b=>b.addEventListener('click',()=>{
+ const plan=b.textContent.replace('Choose','').trim();
+ if(msg&&!msg.value.trim())msg.value='Hi Subham, I am interested in the '+plan+' plan. About my project: ';
+}));
+
+/* Contact: mailto alone fails for people without a mail app, so add WhatsApp + an email link */
+const form=$('#contactForm');
+if(form){
+ const sub=$('button[type=submit]',form),box=document.createElement('div');box.className='form-actions';
+ sub.before(box);box.append(sub);
+ const wa=document.createElement('button');wa.type='button';wa.className='btn btn-dark';wa.textContent='Send on WhatsApp instead';
+ wa.addEventListener('click',()=>{
+  if(!form.checkValidity()){form.reportValidity();return;}
+  const f=form.elements;
+  const t='Hi Subham, I am '+f.name.value.trim()+'.\nService: '+f.service.value+'\n\n'+f.message.value.trim()+'\n\nEmail: '+f.email.value.trim();
+  window.open('https://wa.me/918114963709?text='+encodeURIComponent(t),'_blank','noopener');
+ });
+ box.append(wa);
+}
+const cl=$('.contact-links');
+if(cl&&!$('a[href^="mailto:"]',cl)){
+ cl.insertAdjacentHTML('beforeend','<a class="contact-link" href="mailto:subhammallick454@gmail.com"><span class="bubble"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><span>Email<small>subhammallick454@gmail.com</small></span></a>');
+}
+
+/* Gate: modal semantics, focus, background inert, question text, skip */
+const gate=$('#gate');
+if(gate){
+ gate.setAttribute('aria-modal','true');
+ const pcs=$('.pcs',gate),q=document.createElement('p');q.className='gate-q';q.textContent='How would you like to explore?';pcs.prepend(q);
+ const skip=document.createElement('button');skip.type='button';skip.className='gate-skip';skip.textContent='Skip and view the main site';
+ skip.onclick=()=>$('.pc[data-p="client"]',gate).click();gate.append(skip);
+ const bg=$$('main,.nav-wrap,.signature');
+ const sync=()=>{const open=!gate.classList.contains('out');
+  bg.forEach(e=>open?e.setAttribute('inert',''):e.removeAttribute('inert'));
+  if(open&&gate.classList.contains('ready')){const f=$('.pc',gate);f&&f.focus({preventScroll:true});}};
+ new MutationObserver(sync).observe(gate,{attributes:true,attributeFilter:['class']});sync();
+}
+
+/* Pause off-screen animation */
+if('IntersectionObserver' in window){
+ [['.hero','hero-off'],['.trust-strip','trust-off']].forEach(([s,c])=>{const el=$(s);if(!el)return;
+  new IntersectionObserver(([e])=>document.documentElement.classList.toggle(c,!e.isIntersecting)).observe(el);});
+}
+
+/* Footer name: scale to container so it is never clipped or wrapped */
+const sig=$('.signature-name');
+function fitSig(){
+ if(!sig)return;sig.style.removeProperty('font-size');
+ const w=sig.clientWidth,s=sig.scrollWidth;
+ if(s>w+1)sig.style.setProperty('font-size',(parseFloat(getComputedStyle(sig).fontSize)*w/s*.97)+'px','important');
+}
+addEventListener('resize',fitSig,{passive:true});addEventListener('load',fitSig);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitSig);
+setTimeout(fitSig,600);
+})();
+</script>
 </body>
 </html>
